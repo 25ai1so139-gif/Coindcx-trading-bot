@@ -151,6 +151,8 @@ activemq-data/
 
 # Environments
 .env
+.env.*
+!.env.example
 .envrc
 .venv
 env/
@@ -218,3 +220,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local historical datasets and simulation reports
+data/local/*
+!data/local/.gitkeep
+reports/
+
+# Local credentials and private keys (never needed by the simulator)
+secrets/
+secrets.*
+credentials/
+credentials.*
+*.pem
+*.key

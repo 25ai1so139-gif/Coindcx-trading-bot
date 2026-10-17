@@ -1,0 +1,58 @@
+name: Phase 1 - native Windows verification
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - phase1-windows-verification
+
+permissions:
+  contents: read
+
+jobs:
+  phase1-tests:
+    runs-on: windows-2022
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONUTF8: "1"
+      PYTHONNOUSERSITE: "1"
+    steps:
+      - name: Check out the selected revision
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+
+      - name: Require native Windows and Python 3.12
+        run: |
+          python -c "import platform, sys; print(platform.platform()); print(sys.version); assert sys.platform == 'win32', 'Native Windows is required'; assert sys.version_info[:2] == (3, 12), 'Python 3.12 is required'"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git --version
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Install declared dependencies without package downloads
+        run: |
+          python -m pip install --no-index --no-cache-dir -r requirements.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Require the complete Phase 1 test foundation
+        run: |
+          python -c "import unittest; suite = unittest.defaultTestLoader.discover('tests'); count = suite.countTestCases(); print(f'Discovered {count} tests'); assert count >= 81, 'The complete Phase 1 suite must be present'"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Run the full offline test suite
+        run: |
+          python -m unittest discover -s tests -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Check working-tree whitespace
+        run: |
+          git diff --check
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
