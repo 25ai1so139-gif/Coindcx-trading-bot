@@ -1,0 +1,1606 @@
+{
+  "phase": "8F",
+  "label": "ACTUAL_STORED_DATA_PREFLIGHT_NOT_MARKET_PERFORMANCE",
+  "status": "BLOCKED",
+  "audited_at_utc": "2026-10-17 15:06:45.212847+00:00",
+  "rules_recorded_at_utc": "2026-10-17T15:02:37.360701+00:00",
+  "rules_path": "docs/examples/phase8f-rules.json",
+  "rules_sha256": "1f025eae34046e0ca8c24c28809778cf8cab5a87be8825b5b65cb5e1dccd6ecf",
+  "frozen_implementation": {
+    "label": "IMPLEMENTED_RULES_RECORDED_BEFORE_PHASE8F_TESTS_NOT_MARKET_PERFORMANCE",
+    "recorded_at_utc": "2026-10-17T15:02:37.360701+00:00",
+    "settings": {
+      "mode": "backtest",
+      "starting_capital": "2000",
+      "account_currency": "INR",
+      "amount_type": "margin",
+      "margin_amount": "100",
+      "leverage": "1",
+      "max_leverage": "3",
+      "timeframe": "15m",
+      "strategy": "sma_cross",
+      "risk_per_trade": "0.005",
+      "max_planned_risk": "20",
+      "stop_loss_fraction": "0.02",
+      "daily_loss_limit": "0.02",
+      "daily_loss_amount": "40",
+      "max_trades_per_day": 3,
+      "max_drawdown": "0.05",
+      "max_margin_fraction": "0.25",
+      "fee_rate": "0.001",
+      "slippage_rate": "0.001",
+      "min_history_bars": 2880
+    },
+    "strategies": {
+      "sma_cross": {
+        "fast": 5,
+        "slow": 20
+      },
+      "momentum": {
+        "lookback": 12,
+        "threshold": "0.01"
+      }
+    },
+    "source_sha256": {
+      "config.py": "2255aef6090a72e0d400f0231c9a2261b12e50ff8cccf81059ccb8a3a3656b07",
+      "strategies/base.py": "cf52b71595de79a0ed12c70e28c574465e28241b6d1016253a7a254e5ca09869",
+      "strategies/sma_cross.py": "88fd8c5a3bcb8fa812db5d084a756db41d8e83ada88d8b97d302362aa4a74125",
+      "strategies/momentum.py": "573789e8fdbe85a2fcbff39ee5d9efc222f63a7761d7a27956585e52f92fe0de",
+      "backtesting/engine.py": "9e5778e7fece29c8b75f781a5d86de87eca557f4b0a1793964acdc3e797e7e2b",
+      "backtesting/experiment.py": "71076b813b891669fb08e4d05c101e509bea63340e684560d8d9446671d01ea2",
+      "backtesting/metrics.py": "d554e81be252044ce2327423bdd9b5d9413af5fb0041e0981a6bbb116d1228a2",
+      "backtesting/benchmarks.py": "21f578e023612997599a29d35d601509a07db56e5f741751924b9ed7ba8734e7",
+      "backtesting/splits.py": "b08fdf8f295ca46d26abdeb3ae5eef50ba26ba3e56f4a0dc817da0b96838136d",
+      "paper_trading/broker.py": "e1df29a816de7ae91ca94ffcccaaed44b26d0948bbf7120892d7c547f3e7dfea",
+      "risk/entry.py": "1440d650d581ea41758216bef0423b41e716a900e793d99f31a791961c3cd94b",
+      "risk/sizing.py": "7bc160ec35fffe5dd392482165e005a1fd22c92fb07eb44526e9d4a879327f17",
+      "risk/controls.py": "3a24a9ab1a3ced7537ef1df99a6ccacd6c85a26d3f0da430809d4475b527c54a",
+      "risk/stops.py": "23f1f21ee8fd57db9f61eff11506dcfc3841ca9e9235dedb30158ffac8e5aa46",
+      "docs/PHASE8F_RULES.md": "6a2b6d38ea6356d8084fdf2394a3376b721de0c2a1ac22df6916918b13bea009"
+    },
+    "parameter_selection": "none",
+    "historical_experiment_started": false
+  },
+  "source_history_capture": "2026-10-17 14:38:33.722542+00:00",
+  "source_history_archive": "reports/phase8e-history",
+  "source_history_sha256": "2bc0d63dcf337c421219289a36147f196475258945c5eb87e2978b8293b53f09",
+  "eth_trace_archive": "reports/phase8e-trace",
+  "eth_trace_sha256": "5909544de937fbf6eee6b6f1924bc538ccaedc64c288fcf60f00014fa92c0fc1",
+  "eth_interval_consistency": {
+    "exact_interval": {
+      "scope": "DIAGNOSTIC_ONLY_NOT_STRATEGY_DATA_OR_ENTRY_APPROVAL",
+      "status": "MISMATCH",
+      "code": "CROSS_INTERVAL_VOLUME_MISMATCH",
+      "minute_count": 15,
+      "source_open_utc": "2026-10-13T23:30:00+00:00",
+      "source_close_utc": "2026-10-13T23:45:00+00:00",
+      "source_values": {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "249701",
+        "close": "250218.5",
+        "volume": "0.086267"
+      },
+      "minute_derived_values": {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "249701",
+        "close": "250218.5",
+        "volume": "0.085028"
+      },
+      "mismatched_fields": [
+        "volume"
+      ],
+      "source_activity_verified": false,
+      "liquidity_verified": false
+    },
+    "context_interval": {
+      "scope": "DIAGNOSTIC_ONLY_NOT_STRATEGY_DATA_OR_ENTRY_APPROVAL",
+      "status": "MISMATCH",
+      "code": "CROSS_INTERVAL_VOLUME_MISMATCH",
+      "minute_count": 15,
+      "source_open_utc": "2026-10-13T23:30:00+00:00",
+      "source_close_utc": "2026-10-13T23:45:00+00:00",
+      "source_values": {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "249701",
+        "close": "250218.5",
+        "volume": "0.086267"
+      },
+      "minute_derived_values": {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "249701",
+        "close": "250218.5",
+        "volume": "0.085028"
+      },
+      "mismatched_fields": [
+        "volume"
+      ],
+      "source_activity_verified": false,
+      "liquidity_verified": false
+    },
+    "different_15m_limits_equal": true,
+    "production_normalized_record": {
+      "timestamp": "2026-10-13T23:30:00+00:00",
+      "open": "250244.2",
+      "high": "250244.2",
+      "low": "249701",
+      "close": "250218.5",
+      "volume": "0.086267",
+      "symbol": "I-ETH_INR",
+      "timeframe": "15m",
+      "quote_volume": ""
+    },
+    "production_path": "direct 15m API -> integer-ms UTC -> unchanged OHLCV -> strict quality/loader; no resampling",
+    "neighbor_checks": [
+      {
+        "scope": "DIAGNOSTIC_ONLY_NOT_STRATEGY_DATA_OR_ENTRY_APPROVAL",
+        "status": "MATCH",
+        "code": "INTERVAL_CANDLE_MATCH",
+        "minute_count": 15,
+        "source_open_utc": "2026-10-13T23:45:00+00:00",
+        "source_close_utc": "2026-10-14T00:00:00+00:00",
+        "source_values": {
+          "open": "250215.1",
+          "high": "250215.1",
+          "low": "248513.4",
+          "close": "248513.4",
+          "volume": "0.472555"
+        },
+        "minute_derived_values": {
+          "open": "250215.1",
+          "high": "250215.1",
+          "low": "248513.4",
+          "close": "248513.4",
+          "volume": "0.472555"
+        },
+        "mismatched_fields": [],
+        "source_activity_verified": false,
+        "liquidity_verified": false
+      },
+      {
+        "scope": "DIAGNOSTIC_ONLY_NOT_STRATEGY_DATA_OR_ENTRY_APPROVAL",
+        "status": "MISMATCH",
+        "code": "CROSS_INTERVAL_VOLUME_MISMATCH",
+        "minute_count": 15,
+        "source_open_utc": "2026-10-13T23:30:00+00:00",
+        "source_close_utc": "2026-10-13T23:45:00+00:00",
+        "source_values": {
+          "open": "250244.2",
+          "high": "250244.2",
+          "low": "249701",
+          "close": "250218.5",
+          "volume": "0.086267"
+        },
+        "minute_derived_values": {
+          "open": "250244.2",
+          "high": "250244.2",
+          "low": "249701",
+          "close": "250218.5",
+          "volume": "0.085028"
+        },
+        "mismatched_fields": [
+          "volume"
+        ],
+        "source_activity_verified": false,
+        "liquidity_verified": false
+      },
+      {
+        "scope": "DIAGNOSTIC_ONLY_NOT_STRATEGY_DATA_OR_ENTRY_APPROVAL",
+        "status": "MATCH",
+        "code": "INTERVAL_CANDLE_MATCH",
+        "minute_count": 15,
+        "source_open_utc": "2026-10-13T23:15:00+00:00",
+        "source_close_utc": "2026-10-13T23:30:00+00:00",
+        "source_values": {
+          "open": "250366.1",
+          "high": "250366.1",
+          "low": "250366.1",
+          "close": "250366.1",
+          "volume": "0"
+        },
+        "minute_derived_values": {
+          "open": "250366.1",
+          "high": "250366.1",
+          "low": "250366.1",
+          "close": "250366.1",
+          "volume": "0"
+        },
+        "mismatched_fields": [],
+        "source_activity_verified": false,
+        "liquidity_verified": false
+      }
+    ],
+    "independent_trade_corroboration": false,
+    "upstream_cause_verified": false
+  },
+  "offline_replay": {
+    "status": "PASS",
+    "scope": "ARCHIVED_DIAGNOSTICS_NOT_EXECUTION",
+    "network_requests": 0,
+    "exact_raw_normalized_matches": 46080,
+    "orders_submitted": 0,
+    "trace_code": "CROSS_INTERVAL_VOLUME_MISMATCH"
+  },
+  "data": [
+    {
+      "pair": "I-BTC_INR",
+      "source": "https://api.coindcx.com/market_data/candles",
+      "kind": "historical",
+      "timeframe": "15m",
+      "csv": "reports/phase8e-history/I-BTC_INR.csv",
+      "csv_sha256": "5127ce218526c19d462bb6e80c6855f442ef1a47c3c57b05757d32d1b3052c21",
+      "raw_archive_sha256": "56a40e427f6ca7c03b2c5d46e55ff07613f61a1104591fb5050738f3b8c29f91",
+      "raw_page_sha256": [
+        "cce992845e0284ea0f726b154f3d5f0575371278fc465d8a014a6b31756d2737",
+        "f8905223e2629492a12fe8d1ff135c9fd76210fbefcae2d6d77865cc3ad8ea2d",
+        "27e1bc60a7624f113ff7f3dc5d55f9da74596bdf972cf4b9ed60f45d2ccb5212",
+        "e533ba4526f8cf3fc3b759a1e88c2cebf6deb46407f6d1f0b630f3b2573b4360",
+        "8555596d13e724baa8e3b1f2ff90865a5ebc912cb02edbeaecb141a88b79937d",
+        "860144f524dfc72e0749a19c48f538aa29d05269b150ce168c6f701314eb5288",
+        "ce8a8c9016d13e901e6f31f5fe07423f624dac2140af4cbbfc16af4542bedf13",
+        "5647db391181598d6227c54be78ac342e4cfd65b2400188e2c3eabd0f752ee3b",
+        "bcbeaf592ce3281acd881abd39d0ef25baf86e48bc0bbdbaab4eed89c69bc173",
+        "d7aec6e5bff47c8fc2b47dad0c7787fc965617ef7a8e2e67491438dd042519a5",
+        "9da11162ecbed52d4ee48669beee809d8e94f34a48b596a1904bc0f734cb9eea",
+        "42992f6800ed088c0baf7470d89a818a6418b12faf077ec5b4471a3a12299c33"
+      ],
+      "record_count": 11520,
+      "first_open_utc": "2026-06-19 14:30:00+00:00",
+      "last_open_utc": "2026-10-17 14:15:00+00:00",
+      "last_close_utc": "2026-10-17 14:30:00+00:00",
+      "stored_quote_volumes_available": 0,
+      "metadata_quality_reviewed": false,
+      "metadata_ingestion_eligible": false,
+      "period_quality_counts_not_performance": [
+        {
+          "name": "warmup",
+          "start_utc": "2026-06-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-07-19 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 3,
+          "positive_volume_shape_only": 2877,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "train",
+          "start_utc": "2026-07-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-08-18 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 2,
+          "positive_volume_shape_only": 2878,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "validation",
+          "start_utc": "2026-08-18 14:30:00+00:00",
+          "end_exclusive_utc": "2026-09-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 0,
+          "positive_volume_shape_only": 2880,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "test",
+          "start_utc": "2026-09-17 14:30:00+00:00",
+          "end_exclusive_utc": "2026-10-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 1,
+          "positive_volume_shape_only": 2879,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        }
+      ],
+      "eligibility_review": {
+        "pair": "I-BTC_INR",
+        "raw_normalized_exact_matches": 11520,
+        "longest_positive_volume_run_bars": 6060,
+        "quality": {
+          "symbol": "I-BTC_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "status": "SOURCE_INGESTION_REJECTED",
+          "eligible": false,
+          "reasons": [
+            "SOURCE_INGESTION_REJECTED",
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 11520,
+          "invalid_rows": 0,
+          "completed_rows": 11520,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 11520,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 6,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false,
+          "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+        },
+        "manual_verification": {
+          "command": "verify",
+          "symbol": null,
+          "timeframe": "15m",
+          "strategy": "sma_cross",
+          "signal": "NO_TRADE",
+          "strategy_parameters": {
+            "fast": 5,
+            "slow": 20
+          },
+          "signal_timestamp": null,
+          "entry_reference": null,
+          "stop_loss_reference": null,
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "evaluation_mode": "historical",
+          "candidate": null,
+          "risk_preview": null,
+          "data_quality": null,
+          "entry_candidate": false,
+          "reasons": [
+            "VERIFICATION_REJECTED",
+            "historical data needs an explicit quality review before use"
+          ],
+          "warnings": [],
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "currency": "INR",
+          "risk_decisions": [
+            {
+              "timestamp": "2026-10-17 14:30:00+00:00",
+              "symbol": null,
+              "strategy": null,
+              "approved": false,
+              "reason": "VERIFICATION_REJECTED",
+              "signal_timestamp": null,
+              "data_kind": null,
+              "entry_reference": null,
+              "stop_reference": null,
+              "planned_risk": null,
+              "permitted_risk": null,
+              "margin": null,
+              "notional": null,
+              "leverage": "1",
+              "estimated_fees": null,
+              "estimated_slippage": null,
+              "equity": null,
+              "daily_start_equity": null,
+              "daily_loss_budget": null,
+              "entries_today": null,
+              "daily_halted": null,
+              "drawdown_halted": null,
+              "emergency_halted": null,
+              "entry_fill": null,
+              "stop_price": null,
+              "estimated_stop_fill": null,
+              "effective_leverage": null
+            }
+          ],
+          "note": "Read-only simulated-account review; this is not authorization to submit orders."
+        },
+        "backtest_loader": {
+          "status": "BLOCKED",
+          "reason": "BLOCKED: historical data needs an explicit quality review before use"
+        },
+        "minimum_estimated_costs": {
+          "label": "ARITHMETIC_STEPPED_MINIMUM_NOT_VALIDATED_ORDER_OR_RECOMMENDATION",
+          "quantity": "0.00002",
+          "notional": "164.595084654",
+          "margin": "164.595084654",
+          "entry_fee": "0.164595084654",
+          "exit_fee_at_no_gap_stop": "0.16114187977795908",
+          "margin_plus_entry_fee": "164.759679738654",
+          "planned_stop_risk": "3.77894184047287908",
+          "risk_approved": false,
+          "fee_schedule_verified": false
+        },
+        "csv_sha256": "5127ce218526c19d462bb6e80c6855f442ef1a47c3c57b05757d32d1b3052c21",
+        "original_artifacts_unchanged": true
+      },
+      "captured_public_instrument": {
+        "pair": "I-BTC_INR",
+        "market": "BTCINR",
+        "quote": "INR",
+        "asset": "BTC",
+        "price_precision": 1,
+        "quantity_precision": 5,
+        "min_quantity": "0.00001",
+        "max_quantity": "2",
+        "min_notional": "100",
+        "min_price": "3511201",
+        "max_price": "31600800",
+        "step": "0.00001",
+        "observed_at": "2026-10-17 14:38:47.518544+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "captured_price_observation": {
+        "price": "8221532.7",
+        "candle_open_utc": "2026-10-17 14:15:00+00:00",
+        "candle_close_utc": "2026-10-17 14:30:00+00:00",
+        "retrieved_by_utc": "2026-10-17 14:38:45.961212+00:00",
+        "label": "HISTORICAL_COMPLETED_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "as_of_capture_age_seconds": "513.722542"
+      },
+      "hypothetical_size_not_historical_fill": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-BTC_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:38:47.518544+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "8221532.7",
+        "quantity_step": "0.00001",
+        "minimum_quantity": "0.00001",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.00001",
+          "entry_price": "8229754.2327",
+          "stop_price": "8065159.148046",
+          "margin": "82.297542327",
+          "notional": "82.297542327",
+          "entry_fee": "0.082297542327",
+          "planned_stop_risk": "1.88947092023643954"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.00002",
+          "notional": "164.595084654",
+          "margin": "164.595084654",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "8229754.2327",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      }
+    },
+    {
+      "pair": "I-ETH_INR",
+      "source": "https://api.coindcx.com/market_data/candles",
+      "kind": "historical",
+      "timeframe": "15m",
+      "csv": "reports/phase8e-history/I-ETH_INR.csv",
+      "csv_sha256": "ef035c02465f4801abc26d5d260aac36922ac5ec9dd5aa17fcc291453bca2c3c",
+      "raw_archive_sha256": "2897c3a40847570dbdab7ecfd4e34c8d0d7af831b466c74945fe4e981b77eafe",
+      "raw_page_sha256": [
+        "702f2817df42d5eec18acad68daba882b560b0539fa585cfdbc00b91c0914f6a",
+        "86b412dcba35710b80e6e5cf25040f56206d9d76518f85a6090a4bdb550f11a7",
+        "bb1dbabc57e5e42cb135758e48ec23dda1e3f44a3d7d86d0126b828bb3bb7d81",
+        "dbb5985dc14e69526d9296103f8cb976b725c70b84ccca4bc60ca2488408b6de",
+        "283c45db3e1651a4cad34b53882a78f8b5cf849873575f9ea8c7f8619e72925c",
+        "5a1e2a4e2a4a675849178493bad6b1972acad74caf8f9eb361ceb647c3ac9421",
+        "df20e1ff68012b6b6c9cb163f01550e1139ce308e1d2bbac6039f4682e01b6c3",
+        "aa1dfebf7042891fe1da72644917b8392663b08ea566a78323c716aaf085a558",
+        "747f7493cde72aaade69c546163b8f677e96106702d4ba6066bb489c46596033",
+        "18ca71638a6d74ca00b1f8f033cb701e584bd62f994b22855825cc7c13fd5a73",
+        "5e24f5e102e245cb2697ad8030b592f2e7e01eec5f88f3002d40520ef0c55b6d",
+        "254d620bc2b28f13f7c95fe1cbdeeb9729835f5947608ad248a1ebc7b2b67032"
+      ],
+      "record_count": 11520,
+      "first_open_utc": "2026-06-19 14:30:00+00:00",
+      "last_open_utc": "2026-10-17 14:15:00+00:00",
+      "last_close_utc": "2026-10-17 14:30:00+00:00",
+      "stored_quote_volumes_available": 0,
+      "metadata_quality_reviewed": false,
+      "metadata_ingestion_eligible": false,
+      "period_quality_counts_not_performance": [
+        {
+          "name": "warmup",
+          "start_utc": "2026-06-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-07-19 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 15,
+          "positive_volume_shape_only": 2865,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "train",
+          "start_utc": "2026-07-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-08-18 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 22,
+          "positive_volume_shape_only": 2858,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "validation",
+          "start_utc": "2026-08-18 14:30:00+00:00",
+          "end_exclusive_utc": "2026-09-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 5,
+          "positive_volume_shape_only": 2875,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "test",
+          "start_utc": "2026-09-17 14:30:00+00:00",
+          "end_exclusive_utc": "2026-10-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 4,
+          "positive_volume_shape_only": 2876,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        }
+      ],
+      "eligibility_review": {
+        "pair": "I-ETH_INR",
+        "raw_normalized_exact_matches": 11520,
+        "longest_positive_volume_run_bars": 1910,
+        "quality": {
+          "symbol": "I-ETH_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "status": "SOURCE_INGESTION_REJECTED",
+          "eligible": false,
+          "reasons": [
+            "SOURCE_INGESTION_REJECTED",
+            "SOURCE_INTERVAL_MISMATCH",
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "CROSS_INTERVAL_VOLUME_MISMATCH",
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 11520,
+          "invalid_rows": 0,
+          "completed_rows": 11520,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 11520,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 46,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false,
+          "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+        },
+        "manual_verification": {
+          "command": "verify",
+          "symbol": null,
+          "timeframe": "15m",
+          "strategy": "sma_cross",
+          "signal": "NO_TRADE",
+          "strategy_parameters": {
+            "fast": 5,
+            "slow": 20
+          },
+          "signal_timestamp": null,
+          "entry_reference": null,
+          "stop_loss_reference": null,
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "evaluation_mode": "historical",
+          "candidate": null,
+          "risk_preview": null,
+          "data_quality": null,
+          "entry_candidate": false,
+          "reasons": [
+            "VERIFICATION_REJECTED",
+            "historical data needs an explicit quality review before use"
+          ],
+          "warnings": [],
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "currency": "INR",
+          "risk_decisions": [
+            {
+              "timestamp": "2026-10-17 14:30:00+00:00",
+              "symbol": null,
+              "strategy": null,
+              "approved": false,
+              "reason": "VERIFICATION_REJECTED",
+              "signal_timestamp": null,
+              "data_kind": null,
+              "entry_reference": null,
+              "stop_reference": null,
+              "planned_risk": null,
+              "permitted_risk": null,
+              "margin": null,
+              "notional": null,
+              "leverage": "1",
+              "estimated_fees": null,
+              "estimated_slippage": null,
+              "equity": null,
+              "daily_start_equity": null,
+              "daily_loss_budget": null,
+              "entries_today": null,
+              "daily_halted": null,
+              "drawdown_halted": null,
+              "emergency_halted": null,
+              "entry_fill": null,
+              "stop_price": null,
+              "estimated_stop_fill": null,
+              "effective_leverage": null
+            }
+          ],
+          "note": "Read-only simulated-account review; this is not authorization to submit orders."
+        },
+        "backtest_loader": {
+          "status": "BLOCKED",
+          "reason": "BLOCKED: historical data needs an explicit quality review before use"
+        },
+        "minimum_estimated_costs": {
+          "label": "ARITHMETIC_STEPPED_MINIMUM_NOT_VALIDATED_ORDER_OR_RECOMMENDATION",
+          "quantity": "0.0005",
+          "notional": "122.122",
+          "margin": "122.122",
+          "entry_fee": "0.1221220000",
+          "exit_fee_at_no_gap_stop": "0.119559880440000",
+          "margin_plus_entry_fee": "122.2441220000",
+          "planned_stop_risk": "2.803801440440000",
+          "risk_approved": false,
+          "fee_schedule_verified": false
+        },
+        "csv_sha256": "ef035c02465f4801abc26d5d260aac36922ac5ec9dd5aa17fcc291453bca2c3c",
+        "original_artifacts_unchanged": true
+      },
+      "captured_public_instrument": {
+        "pair": "I-ETH_INR",
+        "market": "ETHINR",
+        "quote": "INR",
+        "asset": "ETH",
+        "price_precision": 1,
+        "quantity_precision": 4,
+        "min_quantity": "1E-7",
+        "max_quantity": "20",
+        "min_notional": "100",
+        "min_price": "81333.33333333333",
+        "max_price": "732000",
+        "step": "0.0001",
+        "observed_at": "2026-10-17 14:38:56.229552+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "captured_price_observation": {
+        "price": "244000",
+        "candle_open_utc": "2026-10-17 14:15:00+00:00",
+        "candle_close_utc": "2026-10-17 14:30:00+00:00",
+        "retrieved_by_utc": "2026-10-17 14:38:55.469739+00:00",
+        "label": "HISTORICAL_COMPLETED_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "as_of_capture_age_seconds": "513.722542"
+      },
+      "hypothetical_size_not_historical_fill": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-ETH_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:38:56.229552+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "244000",
+        "quantity_step": "0.0001",
+        "minimum_quantity": "1E-7",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.0004",
+          "entry_price": "244244.000",
+          "stop_price": "239359.12000",
+          "margin": "97.6976000",
+          "notional": "97.6976000",
+          "entry_fee": "0.0976976000",
+          "planned_stop_risk": "2.243041152352000"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.0005",
+          "notional": "122.122",
+          "margin": "122.122",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "244244.000",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      }
+    },
+    {
+      "pair": "I-SOL_INR",
+      "source": "https://api.coindcx.com/market_data/candles",
+      "kind": "historical",
+      "timeframe": "15m",
+      "csv": "reports/phase8e-history/I-SOL_INR.csv",
+      "csv_sha256": "feafe1db0c4170115493d66c6ef76b37da65066e2638fd0410eb53560a5142c3",
+      "raw_archive_sha256": "ac35e21bdabff9e133e179947f0c21bbf24fd4b5e84663365e7a9f9ec8cb1980",
+      "raw_page_sha256": [
+        "c1d9e20e151e9835e14c25964e4480560f7c43a378917e5e1d46f7af67375f61",
+        "b31b41dad3097a48317f67a2446889cd3d062e9d516ffbabe06d9db6f9c04774",
+        "4010e37f29fc1b8b326abc8a2523cc3de62341e84bdaa76c91c63783091ad2cc",
+        "089027e4b303ab347bd74be8aa0abadd4d17b12743354005cbe62baeb5a87bdc",
+        "80ae47a4de845831212c45a29272e215eaa1932ab2bff66a661a190deac5208d",
+        "28a3b3c2f37cb577f0bfa468ac445232ce1ce6f4ba62ef97fd8105961ca3b6f4",
+        "a05ef404bf6ae5ac0d18869f8946cca81c054ea026fbab2e48b5eb7cf723e771",
+        "d527d533835f41179d61f84b11bf8aade3a2e1b69d28e39bedc5372d470502cb",
+        "caf453328dc8a2eaa8c898a796a89f63bdca2511af5908e35e626b493a8f5725",
+        "4f92aecaa2911afe3dd50064e226405b338d62b814cdf2869b6ca3d83a21a63e",
+        "b1f087a77076571ba658d7d3b26a6d07e56e506945a202880274a5cb4482b547",
+        "10529710732cb01c88849e43f7e864e7e2392eee46dce4caa3a41293fd0998fa"
+      ],
+      "record_count": 11520,
+      "first_open_utc": "2026-06-19 14:30:00+00:00",
+      "last_open_utc": "2026-10-17 14:15:00+00:00",
+      "last_close_utc": "2026-10-17 14:30:00+00:00",
+      "stored_quote_volumes_available": 0,
+      "metadata_quality_reviewed": false,
+      "metadata_ingestion_eligible": false,
+      "period_quality_counts_not_performance": [
+        {
+          "name": "warmup",
+          "start_utc": "2026-06-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-07-19 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 7,
+          "positive_volume_shape_only": 2873,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "train",
+          "start_utc": "2026-07-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-08-18 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 12,
+          "positive_volume_shape_only": 2868,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "validation",
+          "start_utc": "2026-08-18 14:30:00+00:00",
+          "end_exclusive_utc": "2026-09-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 0,
+          "positive_volume_shape_only": 2880,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "test",
+          "start_utc": "2026-09-17 14:30:00+00:00",
+          "end_exclusive_utc": "2026-10-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 4,
+          "positive_volume_shape_only": 2876,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        }
+      ],
+      "eligibility_review": {
+        "pair": "I-SOL_INR",
+        "raw_normalized_exact_matches": 11520,
+        "longest_positive_volume_run_bars": 4503,
+        "quality": {
+          "symbol": "I-SOL_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "status": "SOURCE_INGESTION_REJECTED",
+          "eligible": false,
+          "reasons": [
+            "SOURCE_INGESTION_REJECTED",
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 11520,
+          "invalid_rows": 0,
+          "completed_rows": 11520,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 11520,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 23,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false,
+          "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+        },
+        "manual_verification": {
+          "command": "verify",
+          "symbol": null,
+          "timeframe": "15m",
+          "strategy": "sma_cross",
+          "signal": "NO_TRADE",
+          "strategy_parameters": {
+            "fast": 5,
+            "slow": 20
+          },
+          "signal_timestamp": null,
+          "entry_reference": null,
+          "stop_loss_reference": null,
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "evaluation_mode": "historical",
+          "candidate": null,
+          "risk_preview": null,
+          "data_quality": null,
+          "entry_candidate": false,
+          "reasons": [
+            "VERIFICATION_REJECTED",
+            "historical data needs an explicit quality review before use"
+          ],
+          "warnings": [],
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "currency": "INR",
+          "risk_decisions": [
+            {
+              "timestamp": "2026-10-17 14:30:00+00:00",
+              "symbol": null,
+              "strategy": null,
+              "approved": false,
+              "reason": "VERIFICATION_REJECTED",
+              "signal_timestamp": null,
+              "data_kind": null,
+              "entry_reference": null,
+              "stop_reference": null,
+              "planned_risk": null,
+              "permitted_risk": null,
+              "margin": null,
+              "notional": null,
+              "leverage": "1",
+              "estimated_fees": null,
+              "estimated_slippage": null,
+              "equity": null,
+              "daily_start_equity": null,
+              "daily_loss_budget": null,
+              "entries_today": null,
+              "daily_halted": null,
+              "drawdown_halted": null,
+              "emergency_halted": null,
+              "entry_fill": null,
+              "stop_price": null,
+              "estimated_stop_fill": null,
+              "effective_leverage": null
+            }
+          ],
+          "note": "Read-only simulated-account review; this is not authorization to submit orders."
+        },
+        "backtest_loader": {
+          "status": "BLOCKED",
+          "reason": "BLOCKED: historical data needs an explicit quality review before use"
+        },
+        "minimum_estimated_costs": {
+          "label": "ARITHMETIC_STEPPED_MINIMUM_NOT_VALIDATED_ORDER_OR_RECOMMENDATION",
+          "quantity": "0.01",
+          "notional": "104.876772",
+          "margin": "104.876772",
+          "entry_fee": "0.104876772",
+          "exit_fee_at_no_gap_stop": "0.10267645732344",
+          "margin_plus_entry_fee": "104.981648772",
+          "planned_stop_risk": "2.40786790588344",
+          "risk_approved": false,
+          "fee_schedule_verified": false
+        },
+        "csv_sha256": "feafe1db0c4170115493d66c6ef76b37da65066e2638fd0410eb53560a5142c3",
+        "original_artifacts_unchanged": true
+      },
+      "captured_public_instrument": {
+        "pair": "I-SOL_INR",
+        "market": "SOLINR",
+        "quote": "INR",
+        "asset": "SOL",
+        "price_precision": 1,
+        "quantity_precision": 3,
+        "min_quantity": "0.01",
+        "max_quantity": "10000000",
+        "min_notional": "100",
+        "min_price": "3493.3333333333335",
+        "max_price": "31440",
+        "step": "0.001",
+        "observed_at": "2026-10-17 14:39:04.849230+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "captured_price_observation": {
+        "price": "10477.2",
+        "candle_open_utc": "2026-10-17 14:15:00+00:00",
+        "candle_close_utc": "2026-10-17 14:30:00+00:00",
+        "retrieved_by_utc": "2026-10-17 14:39:04.142633+00:00",
+        "label": "HISTORICAL_COMPLETED_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "as_of_capture_age_seconds": "513.722542"
+      },
+      "hypothetical_size_not_historical_fill": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-SOL_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:39:04.849230+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "10477.2",
+        "quantity_step": "0.001",
+        "minimum_quantity": "0.01",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.009",
+          "entry_price": "10487.6772",
+          "stop_price": "10277.923656",
+          "margin": "94.3890948",
+          "notional": "94.3890948",
+          "entry_fee": "0.0943890948",
+          "planned_stop_risk": "2.167081115295096"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.01",
+          "notional": "104.876772",
+          "margin": "104.876772",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "10487.6772",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      }
+    },
+    {
+      "pair": "I-DOGE_INR",
+      "source": "https://api.coindcx.com/market_data/candles",
+      "kind": "historical",
+      "timeframe": "15m",
+      "csv": "reports/phase8e-history/I-DOGE_INR.csv",
+      "csv_sha256": "de7caf6e441a3884d34b0c84cb37d63ede710391fa50b7280a8dbfb48d8081f8",
+      "raw_archive_sha256": "005e3be24869c341c393223d2e0efc289497098e0e703f514d5ba85ad8b29535",
+      "raw_page_sha256": [
+        "e23a53bf8230bd965fbf7bd8e5efa3aceb8c1f30e71c410b6715d43d1f8fd0cf",
+        "59fdbf13e79f00d99d5de5a60555f76920cf9a6331c65b0962fe0b5a13ae817f",
+        "aa72c64410a433c3704ad9ce21822fce3419e0a0d33e8c694bdb405a5220e68d",
+        "c78e3db3d5ca8dc1c23b4121e7fb5347fbbf36e0bb7fe896a1d6a5cb94a0a38c",
+        "b7647b23a7e9d999cf46582c751adfb56844ba2e8c4d56ae229b52d14b651b94",
+        "18058f05246c0bae75535b9bac35ccbeed918cd1f51fa8364c1f2c37581d24d5",
+        "b6be21ce6b48d3d736f7cd5c9776a60528e68492ce9e2893d4b3110559d53a3f",
+        "c5a95048f05f5e279da9408e2d9701e00c304e926a0a0d378e37feabf5d451e2",
+        "cd51d5906574721cf9c5780c1e7e532d134e97c09fabbabe96b1d215dfea8f58",
+        "7486087cddb4ebef29fd4395b89699b209a0886d858482385578b73df5c5d6b9",
+        "fe8a5c07662eadf8017746befcb4204b7ceff411c1d0ca38928a629a9fc81c30",
+        "8993532f5198ca456bee5eef7e471f296c6dfe1647b0ac01df03c697a11114d6"
+      ],
+      "record_count": 11520,
+      "first_open_utc": "2026-06-19 14:30:00+00:00",
+      "last_open_utc": "2026-10-17 14:15:00+00:00",
+      "last_close_utc": "2026-10-17 14:30:00+00:00",
+      "stored_quote_volumes_available": 0,
+      "metadata_quality_reviewed": false,
+      "metadata_ingestion_eligible": false,
+      "period_quality_counts_not_performance": [
+        {
+          "name": "warmup",
+          "start_utc": "2026-06-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-07-19 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 65,
+          "positive_volume_shape_only": 2815,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "train",
+          "start_utc": "2026-07-19 14:30:00+00:00",
+          "end_exclusive_utc": "2026-08-18 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 81,
+          "positive_volume_shape_only": 2799,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "validation",
+          "start_utc": "2026-08-18 14:30:00+00:00",
+          "end_exclusive_utc": "2026-09-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 20,
+          "positive_volume_shape_only": 2860,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        },
+        {
+          "name": "test",
+          "start_utc": "2026-09-17 14:30:00+00:00",
+          "end_exclusive_utc": "2026-10-17 14:30:00+00:00",
+          "observed_bars": 2880,
+          "expected_bars": 2880,
+          "zero_volume_bars": 29,
+          "positive_volume_shape_only": 2851,
+          "eligible_strategy_bars": 0,
+          "strategy_evaluated": false
+        }
+      ],
+      "eligibility_review": {
+        "pair": "I-DOGE_INR",
+        "raw_normalized_exact_matches": 11520,
+        "longest_positive_volume_run_bars": 959,
+        "quality": {
+          "symbol": "I-DOGE_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "status": "SOURCE_INGESTION_REJECTED",
+          "eligible": false,
+          "reasons": [
+            "SOURCE_INGESTION_REJECTED",
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 11520,
+          "invalid_rows": 0,
+          "completed_rows": 11520,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 11520,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 195,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false,
+          "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+        },
+        "manual_verification": {
+          "command": "verify",
+          "symbol": null,
+          "timeframe": "15m",
+          "strategy": "sma_cross",
+          "signal": "NO_TRADE",
+          "strategy_parameters": {
+            "fast": 5,
+            "slow": 20
+          },
+          "signal_timestamp": null,
+          "entry_reference": null,
+          "stop_loss_reference": null,
+          "as_of": "2026-10-17T14:30:00+00:00",
+          "evaluation_mode": "historical",
+          "candidate": null,
+          "risk_preview": null,
+          "data_quality": null,
+          "entry_candidate": false,
+          "reasons": [
+            "VERIFICATION_REJECTED",
+            "historical data needs an explicit quality review before use"
+          ],
+          "warnings": [],
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "currency": "INR",
+          "risk_decisions": [
+            {
+              "timestamp": "2026-10-17 14:30:00+00:00",
+              "symbol": null,
+              "strategy": null,
+              "approved": false,
+              "reason": "VERIFICATION_REJECTED",
+              "signal_timestamp": null,
+              "data_kind": null,
+              "entry_reference": null,
+              "stop_reference": null,
+              "planned_risk": null,
+              "permitted_risk": null,
+              "margin": null,
+              "notional": null,
+              "leverage": "1",
+              "estimated_fees": null,
+              "estimated_slippage": null,
+              "equity": null,
+              "daily_start_equity": null,
+              "daily_loss_budget": null,
+              "entries_today": null,
+              "daily_halted": null,
+              "drawdown_halted": null,
+              "emergency_halted": null,
+              "entry_fill": null,
+              "stop_price": null,
+              "estimated_stop_fill": null,
+              "effective_leverage": null
+            }
+          ],
+          "note": "Read-only simulated-account review; this is not authorization to submit orders."
+        },
+        "backtest_loader": {
+          "status": "BLOCKED",
+          "reason": "BLOCKED: historical data needs an explicit quality review before use"
+        },
+        "minimum_estimated_costs": {
+          "label": "ARITHMETIC_STEPPED_MINIMUM_NOT_VALIDATED_ORDER_OR_RECOMMENDATION",
+          "quantity": "13",
+          "notional": "105.0552503",
+          "margin": "105.0552503",
+          "entry_fee": "0.1050552503",
+          "exit_fee_at_no_gap_stop": "0.102851191148706",
+          "margin_plus_entry_fee": "105.1603055503",
+          "planned_stop_risk": "2.411965592742706",
+          "risk_approved": false,
+          "fee_schedule_verified": false
+        },
+        "csv_sha256": "de7caf6e441a3884d34b0c84cb37d63ede710391fa50b7280a8dbfb48d8081f8",
+        "original_artifacts_unchanged": true
+      },
+      "captured_public_instrument": {
+        "pair": "I-DOGE_INR",
+        "market": "DOGEINR",
+        "quote": "INR",
+        "asset": "DOGE",
+        "price_precision": 4,
+        "quantity_precision": 0,
+        "min_quantity": "0.001",
+        "max_quantity": "200000",
+        "min_notional": "100",
+        "min_price": "2.6828666666666665",
+        "max_price": "24.1458",
+        "step": "1",
+        "observed_at": "2026-10-17 14:39:12.120149+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "captured_price_observation": {
+        "price": "8.0731",
+        "candle_open_utc": "2026-10-17 14:15:00+00:00",
+        "candle_close_utc": "2026-10-17 14:30:00+00:00",
+        "retrieved_by_utc": "2026-10-17 14:39:11.584386+00:00",
+        "label": "HISTORICAL_COMPLETED_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "as_of_capture_age_seconds": "513.722542"
+      },
+      "hypothetical_size_not_historical_fill": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-DOGE_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:39:12.120149+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "8.0731",
+        "quantity_step": "1",
+        "minimum_quantity": "0.001",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "12",
+          "entry_price": "8.0811731",
+          "stop_price": "7.919549638",
+          "margin": "96.9740772",
+          "notional": "96.9740772",
+          "entry_fee": "0.0969740772",
+          "planned_stop_risk": "2.226429777916344"
+        },
+        "theoretical_minimum": {
+          "quantity": "13",
+          "notional": "105.0552503",
+          "margin": "105.0552503",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "8.0811731",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      }
+    }
+  ],
+  "strategy_preflight": [
+    {
+      "symbol": "I-BTC_INR",
+      "strategy": "sma_cross",
+      "parameters": {
+        "fast": 5,
+        "slow": 20
+      },
+      "indicator_minimum_bars": 21,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    },
+    {
+      "symbol": "I-BTC_INR",
+      "strategy": "momentum",
+      "parameters": {
+        "lookback": 12,
+        "threshold": "0.01"
+      },
+      "indicator_minimum_bars": 13,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    },
+    {
+      "symbol": "I-ETH_INR",
+      "strategy": "sma_cross",
+      "parameters": {
+        "fast": 5,
+        "slow": 20
+      },
+      "indicator_minimum_bars": 21,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    },
+    {
+      "symbol": "I-ETH_INR",
+      "strategy": "momentum",
+      "parameters": {
+        "lookback": 12,
+        "threshold": "0.01"
+      },
+      "indicator_minimum_bars": 13,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    },
+    {
+      "symbol": "I-SOL_INR",
+      "strategy": "sma_cross",
+      "parameters": {
+        "fast": 5,
+        "slow": 20
+      },
+      "indicator_minimum_bars": 21,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    },
+    {
+      "symbol": "I-SOL_INR",
+      "strategy": "momentum",
+      "parameters": {
+        "lookback": 12,
+        "threshold": "0.01"
+      },
+      "indicator_minimum_bars": 13,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    },
+    {
+      "symbol": "I-DOGE_INR",
+      "strategy": "sma_cross",
+      "parameters": {
+        "fast": 5,
+        "slow": 20
+      },
+      "indicator_minimum_bars": 21,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    },
+    {
+      "symbol": "I-DOGE_INR",
+      "strategy": "momentum",
+      "parameters": {
+        "lookback": 12,
+        "threshold": "0.01"
+      },
+      "indicator_minimum_bars": 13,
+      "engine_minimum_history": 2880,
+      "status": "BLOCKED",
+      "reason": "BLOCKED: historical data needs an explicit quality review before use",
+      "strategy_signals_generated": false,
+      "backtest_executed": false,
+      "performance": {
+        "trade_count": null,
+        "gross_fill_pnl_before_fees_inr": null,
+        "reference_price_pnl_before_costs_inr": null,
+        "net_pnl_inr": null,
+        "win_rate_percent": null,
+        "expectancy_inr": null,
+        "profit_factor": null,
+        "max_drawdown_inr": null,
+        "max_drawdown_percent": null,
+        "exposure_bar_fraction": null,
+        "fees_inr": null,
+        "slippage_inr": null,
+        "benchmark_comparison": null
+      }
+    }
+  ],
+  "methodology": {
+    "existing_split_plan": {
+      "warmup_start": "2026-06-19 14:30:00+00:00",
+      "train_start": "2026-07-19 14:30:00+00:00",
+      "validation_start": "2026-08-18 14:30:00+00:00",
+      "test_start": "2026-09-17 14:30:00+00:00",
+      "test_end_exclusive": "2026-10-17 14:30:00+00:00",
+      "bars_per_period": 2880,
+      "parameters_selected": false,
+      "evaluation_executed": false
+    },
+    "funding": "UNMODELED_NO_SUPPORTED_DERIVATIVES_PRODUCT",
+    "baseline_fee_rate_each_side": "0.001",
+    "baseline_slippage_each_side": "0.001",
+    "cost_stress_multiplier": "2",
+    "cost_sensitivity_performance": null,
+    "parameter_sensitivity_candidates": [],
+    "robustness_performance": null,
+    "parameters_selected": false,
+    "out_of_sample_evaluated": false
+  },
+  "environment": {
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "sqlite": "3.53.1"
+  },
+  "network_requests": 0,
+  "private_requests": 0,
+  "orders_submitted": 0,
+  "backtests_run": 0,
+  "live_trading_enabled": false,
+  "limitations": [
+    "Zero gaps or duplicates do not qualify source activity, quote liquidity or an executable market.",
+    "Positive-volume counts describe Candle shape only, not eligible observations or signals.",
+    "No period was repaired, sliced to remove zeros, tuned, or evaluated for returns.",
+    "Recorded public minimums/prices are snapshot observations, not verified historical execution constraints.",
+    "Unavailable performance is null, not a zero-trade strategy result or preserved final equity."
+  ],
+  "test_runs": [
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "passed": 633,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "total": 634,
+      "seconds": 30.118
+    },
+    {
+      "command": ".venv/bin/python -m unittest tests.test_backtesting tests.test_chronological_evaluation tests.test_strategy_engine tests.test_signal_verification tests.test_engine_cli tests.test_central_risk tests.test_interval_trace tests.test_minimum_diagnostics -v",
+      "passed": 245,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 245,
+      "seconds": 14.63
+    },
+    {
+      "command": "COINDCX_RUN_PUBLIC_INTEGRATION=1 .venv/bin/python -m unittest discover -s tests -v",
+      "passed": 634,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 634,
+      "seconds": 29.346
+    }
+  ],
+  "guarded_functional_preflight": {
+    "status": "PASS_EXPECTED_EIGHT_BLOCKS",
+    "not_unit_test_counts": true,
+    "forbidden_calls": [
+      "socket.socket",
+      "SmaCross._calculate",
+      "Momentum._calculate",
+      "PaperBroker",
+      "simulate",
+      "run_experiment",
+      "benchmarks"
+    ],
+    "network_requests": 0,
+    "orders_submitted": 0,
+    "strategy_signals_generated": 0,
+    "account_created": false
+  },
+  "public_replay_package": {
+    "label": "PUBLIC_ARCHIVED_MARKET_DATA_AND_RULES_ONLY_NO_ACCOUNT_DATABASE_OR_CREDENTIALS",
+    "path": "reports/phase8f-replay-inputs.zip",
+    "bytes": 3342701,
+    "sha256": "2ff6f63c3c03083592d53767c13ab06056189d7c1b52ec798e081cd64c2a3835",
+    "source_files": 85
+  },
+  "phase8e_documentation_source": {
+    "url": "https://docs.coindcx.com/",
+    "at_utc": "2026-10-17T14:43:49.695743+00:00",
+    "http": 200,
+    "bytes": 1118960,
+    "sha256": "4aa8e4e4a3f26cb626c847b651853734405dbcbe88a087963602964a0d7b2603"
+  },
+  "source_evidence_path": "reports/phase8f-guarded/evidence.json",
+  "source_evidence_sha256": "c11ad2dfce36e887403846103db4fb7039bb2dc74d645e04ceccd05c0e0dc83e",
+  "native_windows": "UNVERIFIED_NOT_EXECUTED"
+}

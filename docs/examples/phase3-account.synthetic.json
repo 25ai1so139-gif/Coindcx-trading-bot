@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "account_mode": "paper",
+  "kind": "synthetic",
+  "label": "SYNTHETIC offline example only; not an actual account",
+  "as_of": "2024-02-02T00:00:00+00:00",
+  "starting_capital": "2000",
+  "equity": "2000",
+  "peak_equity": "2000",
+  "day_start_equity": "2000",
+  "day": "2024-02-02",
+  "entries_today": 0,
+  "has_open_position": false,
+  "daily_halted": false,
+  "drawdown_halted": false,
+  "emergency_halted": false
+}

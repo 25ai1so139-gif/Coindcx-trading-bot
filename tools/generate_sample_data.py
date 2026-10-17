@@ -30,7 +30,8 @@ def generate(path: Path, bars: int = 3072) -> None:
     metadata = {
         "symbol": "SYNTHETIC-INR", "quote_currency": "INR", "timeframe": "15m",
         "kind": "synthetic", "source": "generated mathematical waveform; not market data",
-        "quality_reviewed": False, "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        "quality_reviewed": False, "market_status": "active", "quote_volume_verified": False,
+        "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
     }
     sidecar.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
 

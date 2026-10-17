@@ -226,6 +226,13 @@ data/local/*
 !data/local/.gitkeep
 reports/
 
+# Local durable paper accounts, backups, receipts and SQLite sidecars
+paper_trading/local/
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+
 # Local credentials and private keys (never needed by the simulator)
 secrets/
 secrets.*

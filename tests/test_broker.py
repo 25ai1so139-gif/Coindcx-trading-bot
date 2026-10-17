@@ -2,7 +2,7 @@ import unittest
 from decimal import Decimal
 
 from config import Settings
-from paper_trading.broker import PaperBroker
+from tests.helpers import SyntheticBroker as PaperBroker
 from strategies.base import Signal
 from tests.helpers import candle
 

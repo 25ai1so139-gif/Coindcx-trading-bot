@@ -1,1 +1,1 @@
-"""Offline historical market data and eligibility checks."""
+"""Read-only public ingestion, offline CSVs, and historical eligibility checks."""

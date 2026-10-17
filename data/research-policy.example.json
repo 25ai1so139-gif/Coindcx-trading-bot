@@ -1,0 +1,8 @@
+{
+  "min_history_bars": 2880,
+  "min_completeness": "1",
+  "max_staleness_minutes": 30,
+  "max_zero_volume_fraction": "0",
+  "min_quote_volume_per_bar": null,
+  "require_verified_liquidity": false
+}

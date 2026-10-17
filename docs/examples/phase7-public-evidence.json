@@ -1,0 +1,65 @@
+{
+  "label": "ACTUAL_PUBLIC_READ_ONLY_EVIDENCE_NOT_MARKET_QUALIFICATION",
+  "recorded_at": "2026-10-17T11:46:07.828843+00:00",
+  "documentation": {
+    "url": "https://docs.coindcx.com/",
+    "http_status": 200,
+    "sha256": "6ca23c1831245795d6df8a58a0d0bdecae40996681b99a02475945b855247ab5"
+  },
+  "discovery": {
+    "command": ".venv/bin/python -m cli data markets",
+    "exit_code": 0,
+    "market_count": 991,
+    "confirmed_active_inr_count": 339
+  },
+  "instrument": {
+    "command": ".venv/bin/python -m cli exchange instrument --pair I-BTC_INR",
+    "exit_code": 0,
+    "result": {
+      "status": "PUBLIC_METADATA_ONLY",
+      "instrument": {
+        "pair": "I-BTC_INR",
+        "market": "BTCINR",
+        "quote": "INR",
+        "asset": "BTC",
+        "price_precision": 1,
+        "quantity_precision": 5,
+        "min_quantity": "0.00001",
+        "max_quantity": "2",
+        "min_notional": "100",
+        "min_price": "3511201",
+        "max_price": "31600800",
+        "step": "0.00001",
+        "observed_at": "2026-10-17 11:46:07.810635+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "market_qualified": false,
+      "price_tick_exchange_validated": false,
+      "orders_submitted": 0,
+      "live_trading_enabled": false
+    }
+  },
+  "worker": {
+    "label": "ACTUAL_PUBLIC_WORKER_SMOKE_NOT_MARKET_QUALIFICATION",
+    "at": "2026-10-17T11:39:31.980470+00:00",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "pair": "I-BTC_INR",
+    "observed_health": "DATA_BLOCKED",
+    "observed_reason": "ZERO_VOLUME",
+    "start_exit": 0,
+    "status_exit": 0,
+    "stop_exit": 0,
+    "final_health": "STOPPED",
+    "equity": "2000",
+    "entries_today": 0,
+    "processed_candles": 0,
+    "emergency_halted": true,
+    "orders_submitted": 0,
+    "live_trading_enabled": false
+  },
+  "private_requests_made": 0,
+  "real_orders_submitted": 0
+}

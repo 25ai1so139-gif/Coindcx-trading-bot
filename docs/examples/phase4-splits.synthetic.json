@@ -1,0 +1,7 @@
+{
+  "train_start": "2024-01-31T00:00:00Z",
+  "validation_start": "2024-03-01T00:00:00Z",
+  "test_start": "2024-03-31T00:00:00Z",
+  "test_end": "2024-04-30T00:00:00Z",
+  "min_evaluation_bars": 2880
+}

@@ -53,16 +53,27 @@ def load_csv(path: str | Path, min_history_bars: int = 2880,
         raise ValueError("dataset kind must be historical or synthetic")
     if hashlib.sha256(path.read_bytes()).hexdigest() != metadata.get("sha256"):
         raise ValueError("dataset SHA-256 does not match reviewed metadata")
+    version_two = metadata.get("schema_version") == 2
+    if version_two and metadata.get("ingestion_eligible") is not True:
+        raise ValueError("dataset failed ingestion eligibility; repair the source and re-import it")
     candles: list[Candle] = []
     with path.open(newline="", encoding="utf-8-sig") as stream:
         reader = csv.DictReader(stream)
         expected = {"timestamp", "open", "high", "low", "close", "volume"}
-        if reader.fieldnames is None or set(reader.fieldnames) != expected or len(reader.fieldnames) != 6:
-            raise ValueError("CSV requires exactly timestamp,open,high,low,close,volume")
+        actual = set(reader.fieldnames or [])
+        extended = expected | {"symbol", "timeframe"}
+        valid_header = (actual in (extended, extended | {"quote_volume"}) if version_two else actual == expected)
+        if reader.fieldnames is None or not valid_header or len(actual) != len(reader.fieldnames):
+            columns = "timestamp,open,high,low,close,volume"
+            if version_two:
+                columns += ",symbol,timeframe with optional quote_volume"
+            raise ValueError(f"CSV requires exactly {columns}")
         for line, row in enumerate(reader, 2):
             try:
                 if None in row or any(value is None for value in row.values()):
                     raise ValueError("incorrect column count")
+                if version_two and (row["symbol"] != metadata["symbol"] or row["timeframe"] != "15m"):
+                    raise ValueError("mixed symbol or timeframe")
                 candle = Candle(datetime.fromisoformat(row["timestamp"]),
                                 **{key: row[key] for key in expected - {"timestamp"}})
                 if candle.closed_at > datetime.now(timezone.utc):
@@ -74,4 +85,14 @@ def load_csv(path: str | Path, min_history_bars: int = 2880,
                 raise ValueError(f"CSV line {line}: {exc}") from exc
     if len(candles) < min_history_bars:
         raise ValueError(f"insufficient history: {len(candles)} bars; need {min_history_bars}")
+    if version_two:
+        from data.quality import DataPolicy
+        from data.storage import inspect_csv
+        try:
+            policy = DataPolicy(**metadata.get("data_policy", {}))
+        except TypeError as exc:
+            raise ValueError("invalid dataset data_policy") from exc
+        result = inspect_csv(path, policy, candles[-1].closed_at)
+        if not result.report["eligible"]:
+            raise ValueError("dataset quality recheck failed: " + ", ".join(result.report["reasons"]))
     return MarketData(symbol.strip(), "INR", kind, source, tuple(candles))

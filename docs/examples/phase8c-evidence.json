@@ -1,0 +1,1369 @@
+{
+  "phase": "8C",
+  "label": "ACTUAL_PUBLIC_DIAGNOSIS_NOT_TRADING_PERFORMANCE",
+  "captured_at_ist": "2026-10-17T19:35:46.811677+05:30",
+  "probe_seconds": 11.780219356999964,
+  "recorded_probe_http_requests": 18,
+  "recorded_probe_statuses": {
+    "200": 18
+  },
+  "official_docs": {
+    "url": "https://docs.coindcx.com/",
+    "http": 200,
+    "sha256": "119d4d27b6acd365b1dbafbb0258df4464fd8c6e8bd0d47515c39c4b9dfb4c89"
+  },
+  "confirmed_mechanism": "Explicit zero source volume survives lossless normalization; strict strategy policy rejects it.",
+  "genuine_no_trade_cause_independently_verified": false,
+  "unresolved_source_issue": "ETH positive 15m volume 0.086267 vs minute sum 0.085028, reproduced independently; no correction invented.",
+  "markets": [
+    {
+      "pair": "I-BTC_INR",
+      "archived_raw_rows": 2882,
+      "raw_normalized_equal": true,
+      "archived_zero_count": 1,
+      "current_identity_confirmed": true,
+      "underlying_no_trade_cause_verified": false,
+      "sample_timestamp_utc": "2026-10-11 00:00:00+00:00",
+      "single_matches_archive": true,
+      "neighbor_sample_matches_archive": true,
+      "minute_sample_count": 15,
+      "minute_sample_volume_sum": "0",
+      "minute_sample_all_zero": true,
+      "cross_interval_checks": [
+        {
+          "time": 1791677700000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0.001512",
+          "minute_sum": "0.001512"
+        },
+        {
+          "time": 1791676800000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0",
+          "minute_sum": "0"
+        },
+        {
+          "time": 1791675900000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0.00245",
+          "minute_sum": "0.00245"
+        }
+      ],
+      "public_instrument": {
+        "pair": "I-BTC_INR",
+        "market": "BTCINR",
+        "quote": "INR",
+        "asset": "BTC",
+        "price_precision": 1,
+        "quantity_precision": 5,
+        "min_quantity": "0.00001",
+        "max_quantity": "2",
+        "min_notional": "100",
+        "min_price": "3511201",
+        "max_price": "31600800",
+        "step": "0.00001",
+        "observed_at": "2026-10-17 14:05:38.988420+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "zero_volume_summary": {
+        "all_flat": true,
+        "all_equal_previous_close": true,
+        "one_raw_and_normalized_example": {
+          "raw": {
+            "open": "8240491.7",
+            "high": "8240491.7",
+            "low": "8240491.7",
+            "close": "8240491.7",
+            "volume": 0,
+            "time": 1791676800000
+          },
+          "normalized": {
+            "timestamp": "2026-10-11T00:00:00+00:00",
+            "open": "8240491.7",
+            "high": "8240491.7",
+            "low": "8240491.7",
+            "close": "8240491.7",
+            "volume": "0",
+            "symbol": "I-BTC_INR",
+            "timeframe": "15m",
+            "quote_volume": ""
+          },
+          "flat": true,
+          "equals_previous_close": true
+        }
+      },
+      "quality": {
+        "symbol": "I-BTC_INR",
+        "timeframe": "15m",
+        "quote_currency": "INR",
+        "data_kind": "historical",
+        "as_of": "2026-10-17T13:15:00+00:00",
+        "status": "SOURCE_INGESTION_REJECTED",
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "warnings": [
+          "QUOTE_LIQUIDITY_NOT_VERIFIED"
+        ],
+        "input_rows": 2882,
+        "invalid_rows": 0,
+        "completed_rows": 2882,
+        "excluded_rows": [],
+        "duplicate_timestamps": 0,
+        "out_of_order": false,
+        "expected_bars": 2882,
+        "missing_bars": 0,
+        "completeness": "1",
+        "zero_volume_bars": 1,
+        "liquidity": "NOT_ASSESSED",
+        "policy": {
+          "min_history_bars": 2880,
+          "min_completeness": "1",
+          "max_staleness_minutes": 30,
+          "max_zero_volume_fraction": "0",
+          "min_quote_volume_per_bar": null,
+          "require_verified_liquidity": true
+        },
+        "live_trading_enabled": false,
+        "volume_diagnostics": [
+          {
+            "row": 2254,
+            "timestamp": "2026-10-11T00:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          }
+        ],
+        "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+      },
+      "minimum_order": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-BTC_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:05:38.988420+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "8215555.4",
+        "quantity_step": "0.00001",
+        "minimum_quantity": "0.00001",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.00001",
+          "entry_price": "8223770.9554",
+          "stop_price": "8059295.536292",
+          "margin": "82.237709554",
+          "notional": "82.237709554",
+          "entry_fee": "0.082237709554",
+          "planned_stop_risk": "1.88809721840447708"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.00002",
+          "notional": "164.475419108",
+          "margin": "164.475419108",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "8223770.9554",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "qualification_status": "BLOCKED",
+      "derived_source_annotation": null
+    },
+    {
+      "pair": "I-ETH_INR",
+      "archived_raw_rows": 2882,
+      "raw_normalized_equal": true,
+      "archived_zero_count": 4,
+      "current_identity_confirmed": true,
+      "underlying_no_trade_cause_verified": false,
+      "sample_timestamp_utc": "2026-10-13 23:15:00+00:00",
+      "single_matches_archive": true,
+      "neighbor_sample_matches_archive": true,
+      "minute_sample_count": 15,
+      "minute_sample_volume_sum": "0",
+      "minute_sample_all_zero": true,
+      "cross_interval_checks": [
+        {
+          "time": 1791934200000,
+          "status": "MISMATCH",
+          "code": "CROSS_INTERVAL_VOLUME_MISMATCH",
+          "minute_count": 15,
+          "source_volume": "0.086267",
+          "minute_sum": "0.085028"
+        },
+        {
+          "time": 1791933300000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0",
+          "minute_sum": "0"
+        },
+        {
+          "time": 1791932400000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0.084761",
+          "minute_sum": "0.084761"
+        }
+      ],
+      "public_instrument": {
+        "pair": "I-ETH_INR",
+        "market": "ETHINR",
+        "quote": "INR",
+        "asset": "ETH",
+        "price_precision": 1,
+        "quantity_precision": 4,
+        "min_quantity": "1E-7",
+        "max_quantity": "20",
+        "min_notional": "100",
+        "min_price": "81419.3",
+        "max_price": "732773.7",
+        "step": "0.0001",
+        "observed_at": "2026-10-17 14:05:41.321839+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "zero_volume_summary": {
+        "all_flat": true,
+        "all_equal_previous_close": true,
+        "one_raw_and_normalized_example": {
+          "raw": {
+            "open": "250366.1",
+            "high": "250366.1",
+            "low": "250366.1",
+            "close": "250366.1",
+            "volume": 0,
+            "time": 1791933300000
+          },
+          "normalized": {
+            "timestamp": "2026-10-13T23:15:00+00:00",
+            "open": "250366.1",
+            "high": "250366.1",
+            "low": "250366.1",
+            "close": "250366.1",
+            "volume": "0",
+            "symbol": "I-ETH_INR",
+            "timeframe": "15m",
+            "quote_volume": ""
+          },
+          "flat": true,
+          "equals_previous_close": true
+        }
+      },
+      "quality": {
+        "symbol": "I-ETH_INR",
+        "timeframe": "15m",
+        "quote_currency": "INR",
+        "data_kind": "historical",
+        "as_of": "2026-10-17T13:15:00+00:00",
+        "status": "SOURCE_INGESTION_REJECTED",
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "SOURCE_INTERVAL_MISMATCH",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "warnings": [
+          "CROSS_INTERVAL_VOLUME_MISMATCH",
+          "QUOTE_LIQUIDITY_NOT_VERIFIED"
+        ],
+        "input_rows": 2882,
+        "invalid_rows": 0,
+        "completed_rows": 2882,
+        "excluded_rows": [],
+        "duplicate_timestamps": 0,
+        "out_of_order": false,
+        "expected_bars": 2882,
+        "missing_bars": 0,
+        "completeness": "1",
+        "zero_volume_bars": 4,
+        "liquidity": "NOT_ASSESSED",
+        "policy": {
+          "min_history_bars": 2880,
+          "min_completeness": "1",
+          "max_staleness_minutes": 30,
+          "max_zero_volume_fraction": "0",
+          "min_quote_volume_per_bar": null,
+          "require_verified_liquidity": true
+        },
+        "live_trading_enabled": false,
+        "volume_diagnostics": [
+          {
+            "row": 905,
+            "timestamp": "2026-09-26T22:45:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2148,
+            "timestamp": "2026-10-09T21:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2535,
+            "timestamp": "2026-10-13T22:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2539,
+            "timestamp": "2026-10-13T23:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          }
+        ],
+        "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+      },
+      "minimum_order": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-ETH_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:05:41.321839+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "244280",
+        "quantity_step": "0.0001",
+        "minimum_quantity": "1E-7",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.0004",
+          "entry_price": "244524.280",
+          "stop_price": "239633.79440",
+          "margin": "97.8097120",
+          "notional": "97.8097120",
+          "entry_fee": "0.0978097120",
+          "planned_stop_risk": "2.245615134002240"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.0005",
+          "notional": "122.26214",
+          "margin": "122.26214",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "244524.280",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "qualification_status": "BLOCKED",
+      "derived_source_annotation": "CROSS_INTERVAL_VOLUME_MISMATCH based on archived public comparison; original metadata unchanged"
+    },
+    {
+      "pair": "I-SOL_INR",
+      "archived_raw_rows": 2882,
+      "raw_normalized_equal": true,
+      "archived_zero_count": 4,
+      "current_identity_confirmed": true,
+      "underlying_no_trade_cause_verified": false,
+      "sample_timestamp_utc": "2026-10-15 21:30:00+00:00",
+      "single_matches_archive": true,
+      "neighbor_sample_matches_archive": true,
+      "minute_sample_count": 15,
+      "minute_sample_volume_sum": "0",
+      "minute_sample_all_zero": true,
+      "cross_interval_checks": [
+        {
+          "time": 1792100700000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0.611126",
+          "minute_sum": "0.611126"
+        },
+        {
+          "time": 1792099800000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0",
+          "minute_sum": "0"
+        },
+        {
+          "time": 1792098900000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0.76324",
+          "minute_sum": "0.76324"
+        }
+      ],
+      "public_instrument": {
+        "pair": "I-SOL_INR",
+        "market": "SOLINR",
+        "quote": "INR",
+        "asset": "SOL",
+        "price_precision": 1,
+        "quantity_precision": 3,
+        "min_quantity": "0.01",
+        "max_quantity": "10000000",
+        "min_notional": "100",
+        "min_price": "3468.0333333333333",
+        "max_price": "31212.3",
+        "step": "0.001",
+        "observed_at": "2026-10-17 14:05:43.306050+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "zero_volume_summary": {
+        "all_flat": true,
+        "all_equal_previous_close": true,
+        "one_raw_and_normalized_example": {
+          "raw": {
+            "open": "10680.5",
+            "high": "10680.5",
+            "low": "10680.5",
+            "close": "10680.5",
+            "volume": 0,
+            "time": 1792099800000
+          },
+          "normalized": {
+            "timestamp": "2026-10-15T21:30:00+00:00",
+            "open": "10680.5",
+            "high": "10680.5",
+            "low": "10680.5",
+            "close": "10680.5",
+            "volume": "0",
+            "symbol": "I-SOL_INR",
+            "timeframe": "15m",
+            "quote_volume": ""
+          },
+          "flat": true,
+          "equals_previous_close": true
+        }
+      },
+      "quality": {
+        "symbol": "I-SOL_INR",
+        "timeframe": "15m",
+        "quote_currency": "INR",
+        "data_kind": "historical",
+        "as_of": "2026-10-17T13:15:00+00:00",
+        "status": "SOURCE_INGESTION_REJECTED",
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "warnings": [
+          "QUOTE_LIQUIDITY_NOT_VERIFIED"
+        ],
+        "input_rows": 2882,
+        "invalid_rows": 0,
+        "completed_rows": 2882,
+        "excluded_rows": [],
+        "duplicate_timestamps": 0,
+        "out_of_order": false,
+        "expected_bars": 2882,
+        "missing_bars": 0,
+        "completeness": "1",
+        "zero_volume_bars": 4,
+        "liquidity": "NOT_ASSESSED",
+        "policy": {
+          "min_history_bars": 2880,
+          "min_completeness": "1",
+          "max_staleness_minutes": 30,
+          "max_zero_volume_fraction": "0",
+          "min_quote_volume_per_bar": null,
+          "require_verified_liquidity": true
+        },
+        "live_trading_enabled": false,
+        "volume_diagnostics": [
+          {
+            "row": 1382,
+            "timestamp": "2026-10-01T22:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2252,
+            "timestamp": "2026-10-10T23:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2529,
+            "timestamp": "2026-10-13T20:45:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2724,
+            "timestamp": "2026-10-15T21:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          }
+        ],
+        "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+      },
+      "minimum_order": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-SOL_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:05:43.306050+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "10479.5",
+        "quantity_step": "0.001",
+        "minimum_quantity": "0.01",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.009",
+          "entry_price": "10489.9795",
+          "stop_price": "10280.179910",
+          "margin": "94.4098155",
+          "notional": "94.4098155",
+          "entry_fee": "0.0944098155",
+          "planned_stop_risk": "2.167556842260810"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.01",
+          "notional": "104.899795",
+          "margin": "104.899795",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "10489.9795",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "qualification_status": "BLOCKED",
+      "derived_source_annotation": null
+    },
+    {
+      "pair": "I-DOGE_INR",
+      "archived_raw_rows": 2882,
+      "raw_normalized_equal": true,
+      "archived_zero_count": 29,
+      "current_identity_confirmed": true,
+      "underlying_no_trade_cause_verified": false,
+      "sample_timestamp_utc": "2026-10-16 23:15:00+00:00",
+      "single_matches_archive": true,
+      "neighbor_sample_matches_archive": true,
+      "minute_sample_count": 15,
+      "minute_sample_volume_sum": "0",
+      "minute_sample_all_zero": true,
+      "cross_interval_checks": [
+        {
+          "time": 1792193400000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "621.099913",
+          "minute_sum": "621.099913"
+        },
+        {
+          "time": 1792192500000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "0",
+          "minute_sum": "0"
+        },
+        {
+          "time": 1792191600000,
+          "status": "MATCH",
+          "code": "INTERVAL_VOLUME_MATCH",
+          "minute_count": 15,
+          "source_volume": "524.388491",
+          "minute_sum": "524.388491"
+        }
+      ],
+      "public_instrument": {
+        "pair": "I-DOGE_INR",
+        "market": "DOGEINR",
+        "quote": "INR",
+        "asset": "DOGE",
+        "price_precision": 4,
+        "quantity_precision": 0,
+        "min_quantity": "0.001",
+        "max_quantity": "200000",
+        "min_notional": "100",
+        "min_price": "2.675666666666667",
+        "max_price": "24.081",
+        "step": "1",
+        "observed_at": "2026-10-17 14:05:46.807833+00:00",
+        "kind": "public_metadata",
+        "limit_orders_supported": true
+      },
+      "zero_volume_summary": {
+        "all_flat": true,
+        "all_equal_previous_close": true,
+        "one_raw_and_normalized_example": {
+          "raw": {
+            "open": "8.1371",
+            "high": "8.1371",
+            "low": "8.1371",
+            "close": "8.1371",
+            "volume": 0,
+            "time": 1792192500000
+          },
+          "normalized": {
+            "timestamp": "2026-10-16T23:15:00+00:00",
+            "open": "8.1371",
+            "high": "8.1371",
+            "low": "8.1371",
+            "close": "8.1371",
+            "volume": "0",
+            "symbol": "I-DOGE_INR",
+            "timeframe": "15m",
+            "quote_volume": ""
+          },
+          "flat": true,
+          "equals_previous_close": true
+        }
+      },
+      "quality": {
+        "symbol": "I-DOGE_INR",
+        "timeframe": "15m",
+        "quote_currency": "INR",
+        "data_kind": "historical",
+        "as_of": "2026-10-17T13:15:00+00:00",
+        "status": "SOURCE_INGESTION_REJECTED",
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "warnings": [
+          "QUOTE_LIQUIDITY_NOT_VERIFIED"
+        ],
+        "input_rows": 2882,
+        "invalid_rows": 0,
+        "completed_rows": 2882,
+        "excluded_rows": [],
+        "duplicate_timestamps": 0,
+        "out_of_order": false,
+        "expected_bars": 2882,
+        "missing_bars": 0,
+        "completeness": "1",
+        "zero_volume_bars": 29,
+        "liquidity": "NOT_ASSESSED",
+        "policy": {
+          "min_history_bars": 2880,
+          "min_completeness": "1",
+          "max_staleness_minutes": 30,
+          "max_zero_volume_fraction": "0",
+          "min_quote_volume_per_bar": null,
+          "require_verified_liquidity": true
+        },
+        "live_trading_enabled": false,
+        "volume_diagnostics": [
+          {
+            "row": 40,
+            "timestamp": "2026-09-17T22:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 332,
+            "timestamp": "2026-09-20T23:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1092,
+            "timestamp": "2026-09-28T21:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1291,
+            "timestamp": "2026-09-30T23:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1381,
+            "timestamp": "2026-10-01T21:45:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1382,
+            "timestamp": "2026-10-01T22:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1387,
+            "timestamp": "2026-10-01T23:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1482,
+            "timestamp": "2026-10-02T23:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1579,
+            "timestamp": "2026-10-03T23:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1671,
+            "timestamp": "2026-10-04T22:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1762,
+            "timestamp": "2026-10-05T21:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 1863,
+            "timestamp": "2026-10-06T22:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2058,
+            "timestamp": "2026-10-08T23:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2151,
+            "timestamp": "2026-10-09T22:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2246,
+            "timestamp": "2026-10-10T22:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2248,
+            "timestamp": "2026-10-10T22:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2249,
+            "timestamp": "2026-10-10T22:45:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2346,
+            "timestamp": "2026-10-11T23:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2347,
+            "timestamp": "2026-10-11T23:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2530,
+            "timestamp": "2026-10-13T21:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2538,
+            "timestamp": "2026-10-13T23:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2541,
+            "timestamp": "2026-10-13T23:45:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2725,
+            "timestamp": "2026-10-15T21:45:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2728,
+            "timestamp": "2026-10-15T22:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2732,
+            "timestamp": "2026-10-15T23:30:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2818,
+            "timestamp": "2026-10-16T21:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2821,
+            "timestamp": "2026-10-16T21:45:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2822,
+            "timestamp": "2026-10-16T22:00:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          },
+          {
+            "row": 2827,
+            "timestamp": "2026-10-16T23:15:00+00:00",
+            "code": "ZERO_VOLUME_FLAT",
+            "structurally_valid": true,
+            "source_activity": "UNVERIFIED",
+            "disposition": "QUARANTINED_FOR_TRADING"
+          }
+        ],
+        "eligibility_scope": "DATA_POLICY_SCREEN_NOT_ENTRY_APPROVAL"
+      },
+      "minimum_order": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-DOGE_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T14:05:46.807833+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "8.0181",
+        "quantity_step": "1",
+        "minimum_quantity": "0.001",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "12",
+          "entry_price": "8.0261181",
+          "stop_price": "7.865595738",
+          "margin": "96.3134172",
+          "notional": "96.3134172",
+          "entry_fee": "0.0963134172",
+          "planned_stop_risk": "2.211261671763144"
+        },
+        "theoretical_minimum": {
+          "quantity": "13",
+          "notional": "104.3395353",
+          "margin": "104.3395353",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "8.0261181",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "qualification_status": "BLOCKED",
+      "derived_source_annotation": null
+    }
+  ],
+  "request_manifest": [
+    {
+      "at": "2026-10-17T14:05:35.531429+00:00",
+      "url": "https://api.coindcx.com/exchange/v1/markets",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0001.json",
+      "sha256": "ad46a66f2523eafe970ee6e5c7ca18a1c498781e885d0f8ad2ad3a95b44989eb"
+    },
+    {
+      "at": "2026-10-17T14:05:36.347012+00:00",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0002.json",
+      "sha256": "a160e03acc523dc57027583ce67adf9c2e8bbec6d1e23ed5368b765cc10f9e2c"
+    },
+    {
+      "at": "2026-10-17T14:05:36.808613+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791677699999&interval=15m&limit=1&pair=I-BTC_INR&startTime=1791676800000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0003.json",
+      "sha256": "a1715bb17b58e3aca3f58ce048cf5988c38b0f2edb9a70bc6fc57ddee7a0e3fc"
+    },
+    {
+      "at": "2026-10-17T14:05:37.293957+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791678599999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1791675900000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0004.json",
+      "sha256": "a9962065b0dd44c2d3dbeb2d6c044e79b6ffcb35fcbc5b0e0b1c2700bd6f8055"
+    },
+    {
+      "at": "2026-10-17T14:05:38.443121+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791678599999&interval=1m&limit=1000&pair=I-BTC_INR&startTime=1791675900000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0005.json",
+      "sha256": "49f88461e097987425185fc65b26bd8d13b95168b7deba59624171878a92dfc5"
+    },
+    {
+      "at": "2026-10-17T14:05:38.977615+00:00",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0006.json",
+      "sha256": "2621f5093691b2110159cc7bf0bc05c4da1931a97b05d8211d289bd5c8372c94"
+    },
+    {
+      "at": "2026-10-17T14:05:39.401468+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791934199999&interval=15m&limit=1&pair=I-ETH_INR&startTime=1791933300000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0007.json",
+      "sha256": "1baa546c4503e8e9db7f3d37817dfe1b8a2f1ace601054e2669086c5318c2224"
+    },
+    {
+      "at": "2026-10-17T14:05:39.865165+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791935099999&interval=15m&limit=1000&pair=I-ETH_INR&startTime=1791932400000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0008.json",
+      "sha256": "f795c2a7b4f5439b95ecfe2412770c99ece2a329ddaa73bfc4a5ae370e8aa1f2"
+    },
+    {
+      "at": "2026-10-17T14:05:40.444419+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791935099999&interval=1m&limit=1000&pair=I-ETH_INR&startTime=1791932400000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0009.json",
+      "sha256": "c9974049a91322785a5acd96d035c48d301986b607f2a8043c642440a60b5d1b"
+    },
+    {
+      "at": "2026-10-17T14:05:41.310224+00:00",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0010.json",
+      "sha256": "3f17106dd4482a8a9ad3a42fc6173af91e29f8bdce4690aa663bd60d09080a59"
+    },
+    {
+      "at": "2026-10-17T14:05:41.707229+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792100699999&interval=15m&limit=1&pair=I-SOL_INR&startTime=1792099800000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0011.json",
+      "sha256": "fa669af2f095504132053b9656e79ffca83f18631055bc1733ed7be0aee5fea6"
+    },
+    {
+      "at": "2026-10-17T14:05:42.177012+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792101599999&interval=15m&limit=1000&pair=I-SOL_INR&startTime=1792098900000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0012.json",
+      "sha256": "40cefe80330785a5fca7131d5112554c9c7b72c75e85488cfb7f9cc5aa656b94"
+    },
+    {
+      "at": "2026-10-17T14:05:42.672136+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792101599999&interval=1m&limit=1000&pair=I-SOL_INR&startTime=1792098900000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0013.json",
+      "sha256": "e9887ebacdcba703064c9910b1d9a8f4163becba3eaca5be03cbd733327ddc0c"
+    },
+    {
+      "at": "2026-10-17T14:05:43.296364+00:00",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0014.json",
+      "sha256": "a160e03acc523dc57027583ce67adf9c2e8bbec6d1e23ed5368b765cc10f9e2c"
+    },
+    {
+      "at": "2026-10-17T14:05:43.758828+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792193399999&interval=15m&limit=1&pair=I-DOGE_INR&startTime=1792192500000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0015.json",
+      "sha256": "3cb3e09f981e1c6c9bc63c19a86a7bcad9cb00d9389c20f80da4e8be3921dfc5"
+    },
+    {
+      "at": "2026-10-17T14:05:44.234235+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792194299999&interval=15m&limit=1000&pair=I-DOGE_INR&startTime=1792191600000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0016.json",
+      "sha256": "8df58b134df99de41ecd76e4e015f0700de05cb56a3eed81150dc6e81e62a085"
+    },
+    {
+      "at": "2026-10-17T14:05:44.688896+00:00",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792194299999&interval=1m&limit=1000&pair=I-DOGE_INR&startTime=1792191600000",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0017.json",
+      "sha256": "4037f4d8971a93d2ce55b5eff765c1b4ab4602cc75fa4da42f148d32a7038657"
+    },
+    {
+      "at": "2026-10-17T14:05:46.794912+00:00",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "method": "GET",
+      "http": 200,
+      "file": "public-0018.json",
+      "sha256": "a4ad778af25aa6514114c9d76ef63aa09cf701051fc7e5c27d8eb9e496d4537c"
+    }
+  ],
+  "independent_eth_recheck": {
+    "label": "ACTUAL_PUBLIC_CROSS_INTERVAL_RECHECK_NOT_REPAIRED",
+    "fifteen_minute": [
+      {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": 249701,
+        "close": "250218.5",
+        "volume": "0.086267",
+        "time": 1791934200000
+      }
+    ],
+    "minutes_with_one_minute_edges": [
+      {
+        "open": "250215.1",
+        "high": "250215.1",
+        "low": "250215.1",
+        "close": "250215.1",
+        "volume": "0.002397",
+        "time": 1791935100000
+      },
+      {
+        "open": "250218.5",
+        "high": "250218.5",
+        "low": "250218.5",
+        "close": "250218.5",
+        "volume": 0,
+        "time": 1791935040000
+      },
+      {
+        "open": "250218.5",
+        "high": "250218.5",
+        "low": "250218.5",
+        "close": "250218.5",
+        "volume": "0.000771",
+        "time": 1791934980000
+      },
+      {
+        "open": "250220.8",
+        "high": "250220.8",
+        "low": "250220.8",
+        "close": "250220.8",
+        "volume": "0.079929",
+        "time": 1791934920000
+      },
+      {
+        "open": "250224.4",
+        "high": "250224.4",
+        "low": "250224.4",
+        "close": "250224.4",
+        "volume": 0,
+        "time": 1791934860000
+      },
+      {
+        "open": 249701,
+        "high": "250224.4",
+        "low": 249701,
+        "close": "250224.4",
+        "volume": "0.001898",
+        "time": 1791934800000
+      },
+      {
+        "open": 249701,
+        "high": 249701,
+        "low": 249701,
+        "close": 249701,
+        "volume": 0,
+        "time": 1791934740000
+      },
+      {
+        "open": 249701,
+        "high": 249701,
+        "low": 249701,
+        "close": 249701,
+        "volume": 0,
+        "time": 1791934680000
+      },
+      {
+        "open": 249701,
+        "high": 249701,
+        "low": 249701,
+        "close": 249701,
+        "volume": 0,
+        "time": 1791934620000
+      },
+      {
+        "open": 249701,
+        "high": 249701,
+        "low": 249701,
+        "close": 249701,
+        "volume": 0,
+        "time": 1791934560000
+      },
+      {
+        "open": 249701,
+        "high": 249701,
+        "low": 249701,
+        "close": 249701,
+        "volume": "0.0008",
+        "time": 1791934500000
+      },
+      {
+        "open": "250237.7",
+        "high": "250237.7",
+        "low": "250237.7",
+        "close": "250237.7",
+        "volume": "0.001191",
+        "time": 1791934440000
+      },
+      {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "250244.2",
+        "close": "250244.2",
+        "volume": 0,
+        "time": 1791934380000
+      },
+      {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "250244.2",
+        "close": "250244.2",
+        "volume": 0,
+        "time": 1791934320000
+      },
+      {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "250244.2",
+        "close": "250244.2",
+        "volume": 0,
+        "time": 1791934260000
+      },
+      {
+        "open": "250244.2",
+        "high": "250244.2",
+        "low": "250244.2",
+        "close": "250244.2",
+        "volume": "0.000439",
+        "time": 1791934200000
+      },
+      {
+        "open": "250366.1",
+        "high": "250366.1",
+        "low": "250366.1",
+        "close": "250366.1",
+        "volume": 0,
+        "time": 1791934140000
+      }
+    ],
+    "inside_count": 15,
+    "inside_volume_sum": "0.085028",
+    "request_manifest": [
+      {
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1791935099999&interval=15m&limit=1000&pair=I-ETH_INR&startTime=1791934200000",
+        "http": 200,
+        "file": "public-01.json",
+        "sha256": "db95541fdb21ea971ae0cc076a9d77ee2e9edaafb794b726c301c087f64dff2a"
+      },
+      {
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1791935159999&interval=1m&limit=1000&pair=I-ETH_INR&startTime=1791934140000",
+        "http": 200,
+        "file": "public-02.json",
+        "sha256": "fa4d25516715925668d3996f6859e19ad41cac42f5fca4fd64ce0eac2ba7e729"
+      }
+    ]
+  },
+  "limits_unchanged": true,
+  "existing_phase8b_account": {
+    "equity": "2000",
+    "emergency_halted": true,
+    "processed_candles": 0,
+    "file_bytes_unchanged": true
+  },
+  "backtests_run": 0,
+  "out_of_sample_runs": 0,
+  "private_requests": 0,
+  "orders_submitted": 0,
+  "live_trading_enabled": false,
+  "test_runs": {
+    "baseline": {
+      "passed": 585,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "total": 586,
+      "seconds": 18.49
+    },
+    "initial_new": {
+      "passed": 25,
+      "failed": 0,
+      "errors": 1,
+      "skipped": 0,
+      "total": 26,
+      "seconds": 0.047
+    },
+    "data_after_fixture_correction": {
+      "passed": 95,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 95,
+      "seconds": 0.211
+    },
+    "intermediate_full": {
+      "passed": 612,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 612,
+      "seconds": 19.968
+    },
+    "final_data": {
+      "passed": 99,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 99,
+      "seconds": 0.223
+    },
+    "final_full": {
+      "passed": 616,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 616,
+      "seconds": 19.598
+    }
+  },
+  "environment": {
+    "platform": "Linux 6.18.55 x86_64/glibc 2.41",
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "native_windows_executed": false
+  },
+  "source_code_hashes": {
+    "data/diagnostics.py": "06e9254611ed9ad685a5f308103309dcccae8545d06a666aa0fdd18679af5984",
+    "data/quality.py": "5788185eb66400a3427439fed486176983eba955b7af53f6a341ca25b6dbb4dc",
+    "exchange/diagnostics.py": "d588329d1797ec972d32d78576bd82fcf6208c42bbeba70523c40d017a615580",
+    "tools/phase8c_diagnose.py": "7178ec8c0ab7485f668aea3f3aa6cddc687813fe3f3b898bea41ec1a2be32223"
+  }
+}

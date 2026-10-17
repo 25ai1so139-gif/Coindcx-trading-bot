@@ -41,6 +41,11 @@ class PositionSizingTests(unittest.TestCase):
             with self.subTest(trigger=trigger), self.assertRaises(ValueError):
                 long_stop_reference(candle(), trigger)
 
+    def test_stop_distance_must_remain_protective_at_decimal_precision(self):
+        for costs in ({}, {"fee_rate": 0, "slippage_rate": 0}):
+            with self.subTest(costs=costs), self.assertRaisesRegex(ValueError, "stop"):
+                size_position(Settings(stop_loss_fraction="1e-40", **costs), D(2000), D(100))
+
     def test_margin_amount_is_not_notional(self):
         plan = size_position(Settings(leverage=3, fee_rate=0, slippage_rate=0), D(2000), D(100))
         self.assertEqual(plan.margin, 100)

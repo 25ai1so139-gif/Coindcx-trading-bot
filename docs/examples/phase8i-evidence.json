@@ -1,0 +1,944 @@
+{
+  "phase": "8I",
+  "recorded_at_utc": "2026-10-17T16:18:02.127385+00:00",
+  "status": "BLOCKED_FOR_NATIVE_WINDOWS_AND_MARKET_QUALIFICATION",
+  "environment": {
+    "cwd": "/workspace/Coindcx-trading-bot",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "sys_platform": "linux",
+    "python": "3.12.14",
+    "sqlite": "3.53.1",
+    "native_windows_available": false,
+    "native_windows_tests_executed": false,
+    "command_paths": {
+      "py": null,
+      "pwsh": null,
+      "powershell": null,
+      "cmd.exe": null,
+      "wine": null
+    },
+    "available_execution_environment": "ONE_ATTACHED_LINUX_WORKSPACE_NO_NATIVE_WINDOWS_RUNNER",
+    "supported_python": "3.12"
+  },
+  "native_windows": {
+    "status": "UNVERIFIED",
+    "executed": false,
+    "passed": null,
+    "failed": null,
+    "errors": null,
+    "skipped": null,
+    "reason": "Only Linux is attached; no native Windows execution tool/runner is available."
+  },
+  "tests": [
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "total": 634,
+      "passed": 633,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "seconds": 31.815,
+      "log": "/tmp/phase8i-baseline.log",
+      "log_sha256": "9d556df2fa5e8c3b1397bee9e440596c1e8db5f2bce6edf90f20f67f6add2481"
+    },
+    {
+      "command": ".venv/bin/python -m unittest tests.test_minimum_diagnostics tests.test_risk tests.test_central_risk tests.test_candle_semantics tests.test_interval_trace -v",
+      "total": 152,
+      "passed": 152,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.692,
+      "log": "/tmp/phase8i-relevant.log",
+      "log_sha256": "a8aab581896bb8aa9e3b175b60ab19086a9e0baa8df3e51546b37560e8265647"
+    },
+    {
+      "command": "COINDCX_RUN_PUBLIC_INTEGRATION=1 .venv/bin/python -m unittest discover -s tests -v",
+      "total": 634,
+      "passed": 634,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 40.41,
+      "log": "/tmp/phase8i-full-public.log",
+      "log_sha256": "6c053a82ff8b4feba0b892806b822b097abc9d72008f0325b7f2f9aa9c74f1c8"
+    }
+  ],
+  "official_source": {
+    "url": "https://docs.coindcx.com/",
+    "retrieved_at_utc": "2026-10-17T16:15:05.665588+00:00",
+    "http": 200,
+    "bytes": 1118960,
+    "sha256": "eacaadbfa6bbc3ba8c27d1285e08e7bee522859d6226d36040c918875f5f9049",
+    "tls_verification": "DEFAULT_ENABLED"
+  },
+  "official_sections": {
+    "markets": {
+      "url": "https://docs.coindcx.com/#markets",
+      "sha256": "c8a9d4f4b37458b18d4607019b2749dbbbc7ec819e49a999feb46bb79b3c9bf6",
+      "unchanged_from_phase8h": true,
+      "visible_text": "Marketsconst request = require(\"request\"); const baseurl = \"https://api.coindcx.com\"; request.get(baseurl + \"/exchange/v1/markets\", function (error, response, body) { console.log(body); }); import requests # Install requests module first. url = \"https://api.coindcx.com/exchange/v1/markets\" response = requests.get(url) data = response.json() print(data) HTTP Request GET /exchange/v1/markets Respose: [ \"SNTBTC\", \"TRXBTC\", \"TRXETH\" . . ] Returns an array of strings of currently active markets."
+    },
+    "markets-details": {
+      "url": "https://docs.coindcx.com/#markets-details",
+      "sha256": "eddb607529322f3f38b2fdacb7b72c7f53fd4d2c25e26047273ea8d93709940d",
+      "unchanged_from_phase8h": true,
+      "visible_text": "Markets detailsconst request = require(\"request\"); const baseurl = \"https://api.coindcx.com\"; request.get( baseurl + \"/exchange/v1/markets_details\", function (error, response, body) { console.log(body); }, ); import requests # Install requests module first. url = \"https://api.coindcx.com/exchange/v1/markets_details\" response = requests.get(url) data = response.json() print(data) Response: [ { \"coindcx_name\": \"XTZBTC\", \"base_currency_short_name\": \"BTC\", \"target_currency_short_name\": \"XTZ\", \"target_currency_name\": \"Tezos\", \"base_currency_name\": \"Bitcoin\", \"base_currency_precision\": 8, \"target_currency_precision\": 1, \"min_market_orders_qty\": 0, \"min_quantity\": 0.1, \"max_quantity\": 90000000, \"max_quantity_market\": 104992.74142259, \"min_price\": 1e-8, \"max_price\": 1000, \"min_notional\": 0.0001, \"max_leverage\": 0, \"max_leverage_short\": 0, \"step\": 0.1, \"order_types\": [ \"limit_order\", \"market_order\", \"stop_limit\", \"take_profit_limit\" ], \"symbol\": \"XTZBTC\", \"ecode\": \"B\", \"bo_sl_safety_percent\": 1, \"pair\": \"B-XTZ_BTC\", \"status\": \"active\" } ] HTTP Request GET /exchange/v1/markets_details Response Param Definitions Parameter Definitions min_quantity It is the minimum quantity of target currency (XTZ) for which an order may be placed max_quantity It is the maximum quantity of target currency (XTZ) for which an order may be placed min_notional It is the minimum amount of base currency (BTC) for which an order may be placed base_currency_precision Number of decimals accepted for the base currency target_currency_precision Number of decimals accepted for the target currency step It is the minimum increment accepted for the target currency pair It is a string created by (ecode, target_currency_short_name, base_currency_short_name). It can be used to connect to DcxStreams socket for API trading. For example: B-BTC_USDT, I-BTC_INR, KC-XYZ_USDT min_price It is the minimum Price for which an order may be placed max_price It is the maximum Price for which an order may be placed order_types Different type of orders that can be placed for the market. For example: limit_order, market_order etc max_leverage It is the max leverage for long positions that is available in this market for margin trading max_leverage_short It is the max leverage for short positions that is available in this market for margin trading status This states if a market can be used for trading. Possible values could be active or inactive min_market_orders_qty Minimum quantity for market orders on this pair. max_quantity_market Maximum quantity allowed for market orders. bo_sl_safety_percent Safety buffer percentage for bracket/stop-loss orders."
+    },
+    "candles": {
+      "url": "https://docs.coindcx.com/#candles",
+      "sha256": "4cb32f133426297293ef045b04eea20d31ca255b8a1879d38dfa3783714fe73e",
+      "unchanged_from_phase8h": true,
+      "visible_text": "Candlesconst request = require(\"request\"); const baseurl = \"https://api.coindcx.com\"; // Replace the \"B-BTC_USDT\" with the desired market pair. request.get( baseurl + \"/market_data/candles?pair=B-BTC_USDT&interval=1m\", function (error, response, body) { console.log(body); }, ); import requests # Install requests module first. url = \"https://api.coindcx.com/market_data/candles?pair=B-BTC_USDT&interval=1m\" # Replace 'SNTBTC' with the desired market pair. response = requests.get(url) data = response.json() print(data) Response [ { \"open\": 0.011803, // open price \"high\": 0.011803, // highest price \"low\": 0.011803, // lowest price \"volume\": 0.35, // total volume in terms of target currency (in BTC for B-BTC_USDT) \"close\": 0.011803, // close price \"time\": 1561463700000 //open time in ms } . . . ], The base URL for Candles API call is https://api.coindcx.com HTTP request GET /market_data/candles Query parameters Name Required Example pair Yes B-BTC_USDT (pair from Market Details API) interval Yes any of the valid intervals given below startTime No timestamp in ms, eg: 1562855417000 endTime No timestamp in ms, eg: 1562855417000 limit No Default: 500; Max: 1000 This API provides with a sorted list (in descending order according to time key) of candlestick bars for given pair. Candles are uniquely identified by their time. Valid intervals m \u2192 minutes, h \u2192 hours, d \u2192 days. 1m 15m 1h 1d"
+    }
+  },
+  "phase8h_exact_reproductions": [
+    {
+      "pair": "I-BTC_INR",
+      "phase8h_reproduction_exact": true,
+      "diagnostic": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-BTC_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T15:58:20.458087+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "8175901",
+        "quantity_step": "0.00001",
+        "minimum_quantity": "0.00001",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.00001",
+          "entry_price": "8184076.901",
+          "stop_price": "8020395.36298",
+          "margin": "81.84076901",
+          "notional": "81.84076901",
+          "entry_fee": "0.08184076901",
+          "planned_stop_risk": "1.8789838525159702"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.00002",
+          "notional": "163.68153802",
+          "margin": "163.68153802",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "8184076.901",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "bounds": {
+        "independent_exact_math": "PASS",
+        "binding_ceiling": "margin",
+        "candidate_matches_production": true,
+        "constrained_sizer_rejected": true,
+        "minimum_compliant_quantity": "0.00002",
+        "no_compliant_lot_within_configured_ceiling": true,
+        "risk_budget": "10",
+        "funding_and_executable_fill_verified": false
+      }
+    },
+    {
+      "pair": "I-ETH_INR",
+      "phase8h_reproduction_exact": true,
+      "diagnostic": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-ETH_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T15:58:20.458087+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "243615.8",
+        "quantity_step": "0.0001",
+        "minimum_quantity": "1E-7",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.0004",
+          "entry_price": "243859.4158",
+          "stop_price": "238982.227484",
+          "margin": "97.54376632",
+          "notional": "97.54376632",
+          "entry_fee": "0.09754376632",
+          "planned_stop_risk": "2.2395092818162064"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.0005",
+          "notional": "121.9297079",
+          "margin": "121.9297079",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "243859.4158",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "bounds": {
+        "independent_exact_math": "PASS",
+        "binding_ceiling": "margin",
+        "candidate_matches_production": true,
+        "constrained_sizer_rejected": true,
+        "minimum_compliant_quantity": "0.0005",
+        "no_compliant_lot_within_configured_ceiling": true,
+        "risk_budget": "10",
+        "funding_and_executable_fill_verified": false
+      }
+    },
+    {
+      "pair": "I-SOL_INR",
+      "phase8h_reproduction_exact": true,
+      "diagnostic": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-SOL_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T15:58:20.458087+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "10420.4",
+        "quantity_step": "0.001",
+        "minimum_quantity": "0.01",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "0.009",
+          "entry_price": "10430.8204",
+          "stop_price": "10222.203992",
+          "margin": "93.8773836",
+          "notional": "93.8773836",
+          "entry_fee": "0.0938773836",
+          "planned_stop_risk": "2.155332727620072"
+        },
+        "theoretical_minimum": {
+          "quantity": "0.01",
+          "notional": "104.308204",
+          "margin": "104.308204",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "10430.8204",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "bounds": {
+        "independent_exact_math": "PASS",
+        "binding_ceiling": "margin",
+        "candidate_matches_production": true,
+        "constrained_sizer_rejected": true,
+        "minimum_compliant_quantity": "0.01",
+        "no_compliant_lot_within_configured_ceiling": true,
+        "risk_budget": "10",
+        "funding_and_executable_fill_verified": false
+      }
+    },
+    {
+      "pair": "I-DOGE_INR",
+      "phase8h_reproduction_exact": true,
+      "diagnostic": {
+        "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+        "symbol": "I-DOGE_INR",
+        "quote_currency": "INR",
+        "instrument_observed_at": "2026-10-17T15:58:20.458087+00:00",
+        "instrument_kind": "public_metadata",
+        "configured_capital": "2000",
+        "configured_margin": "100",
+        "configured_leverage": "1",
+        "amount_type": "margin",
+        "reference_price": "8.03",
+        "quantity_step": "1",
+        "minimum_quantity": "0.001",
+        "minimum_notional": "100",
+        "risk_approved": false,
+        "orders_submitted": 0,
+        "live_trading_enabled": false,
+        "fee_slippage_verified": false,
+        "price_tick_server_verified": false,
+        "status": "NO_TRADE",
+        "candidate": {
+          "quantity": "12",
+          "entry_price": "8.03803",
+          "stop_price": "7.8772694",
+          "margin": "96.45636",
+          "notional": "96.45636",
+          "entry_fee": "0.09645636",
+          "planned_stop_risk": "2.2145434983672"
+        },
+        "theoretical_minimum": {
+          "quantity": "13",
+          "notional": "104.49439",
+          "margin": "104.49439",
+          "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+        },
+        "estimated_entry": "8.03803",
+        "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+      },
+      "bounds": {
+        "independent_exact_math": "PASS",
+        "binding_ceiling": "margin",
+        "candidate_matches_production": true,
+        "constrained_sizer_rejected": true,
+        "minimum_compliant_quantity": "13",
+        "no_compliant_lot_within_configured_ceiling": true,
+        "risk_budget": "10",
+        "funding_and_executable_fill_verified": false
+      }
+    }
+  ],
+  "fresh_public_observations": {
+    "request_manifest": [
+      {
+        "url": "https://api.coindcx.com/exchange/v1/markets",
+        "method": "GET",
+        "at_utc": "2026-10-17T16:15:06.762595+00:00",
+        "http": 200,
+        "file": "public-0001.json",
+        "bytes": 10338,
+        "sha256": "6b6cb2cfb49f104f0e7ee537131a2a9a72490f079de8d0d61e913190b202c374",
+        "headers": {
+          "date": "Sat, 17 Oct 2026 16:15:06 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "W/\"2862-Kx9/YK455MYAQnwXnV0Q3QKjVV8\""
+        }
+      },
+      {
+        "url": "https://api.coindcx.com/exchange/v1/markets_details",
+        "method": "GET",
+        "at_utc": "2026-10-17T16:15:08.682299+00:00",
+        "http": 200,
+        "file": "public-0002.json",
+        "bytes": 550845,
+        "sha256": "cc6927bfaad4dd4abe0f8516ada49a3a0fc7d311125ce63bd97329e575be69f1",
+        "headers": {
+          "date": "Sat, 17 Oct 2026 16:15:07 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "W/\"867bd-57bSQdrqgqmwvU+P8TcdRO8OtTw\""
+        }
+      },
+      {
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792253699999&interval=15m&limit=1&pair=I-BTC_INR&startTime=1792252800000",
+        "method": "GET",
+        "at_utc": "2026-10-17T16:15:09.691729+00:00",
+        "http": 200,
+        "file": "public-0003.json",
+        "bytes": 108,
+        "sha256": "7a2b7ec7c1fe688648ab9c41f008027781c9e0032a9f2dc364cf5285dcfa31aa",
+        "headers": {
+          "date": "Sat, 17 Oct 2026 16:15:09 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "W/\"6c-4xbs1fxp7MBsEfZ8/hfnRDftvvM\""
+        }
+      },
+      {
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792253699999&interval=15m&limit=1&pair=I-ETH_INR&startTime=1792252800000",
+        "method": "GET",
+        "at_utc": "2026-10-17T16:15:10.713986+00:00",
+        "http": 200,
+        "file": "public-0004.json",
+        "bytes": 102,
+        "sha256": "0f57b4b3d275fd6f1b4b71c247dd41c2fb10d49abb2dc8d9194b7d57e9305f4f",
+        "headers": {
+          "date": "Sat, 17 Oct 2026 16:15:10 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "W/\"66-+dd/Ls7hfXvYj6u3aB8HRQASnds\""
+        }
+      },
+      {
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792253699999&interval=15m&limit=1&pair=I-SOL_INR&startTime=1792252800000",
+        "method": "GET",
+        "at_utc": "2026-10-17T16:15:11.761508+00:00",
+        "http": 200,
+        "file": "public-0005.json",
+        "bytes": 102,
+        "sha256": "e3ce8037582c0e54cf08fdae9825d40ca6f265d49e6acedf0b88cdf02018af33",
+        "headers": {
+          "date": "Sat, 17 Oct 2026 16:15:11 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "W/\"66-uj2xU1n2U/TFnnoxoiEgVBV3oDM\""
+        }
+      },
+      {
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792253699999&interval=15m&limit=1&pair=I-DOGE_INR&startTime=1792252800000",
+        "method": "GET",
+        "at_utc": "2026-10-17T16:15:12.674477+00:00",
+        "http": 200,
+        "file": "public-0006.json",
+        "bytes": 99,
+        "sha256": "a724fb50ef33fc28afef6b308d62c410de1439f2bc960d2d6e351967e8a0f10b",
+        "headers": {
+          "date": "Sat, 17 Oct 2026 16:15:12 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "W/\"63-h+RGiZYd7HOixet8WBTnjbV1P2w\""
+        }
+      }
+    ],
+    "metadata_observed_at_utc": "2026-10-17 16:15:08.682299+00:00",
+    "price_open_utc": "2026-10-17 16:00:00+00:00",
+    "price_close_utc": "2026-10-17 16:15:00+00:00",
+    "current_public_observations": [
+      {
+        "pair": "I-BTC_INR",
+        "raw_public_instrument": {
+          "coindcx_name": "BTCINR",
+          "base_currency_short_name": "INR",
+          "target_currency_short_name": "BTC",
+          "target_currency_name": "Bitcoin",
+          "base_currency_name": "Indian Rupee",
+          "base_currency_precision": 1,
+          "target_currency_precision": 5,
+          "min_quantity": "0.00001",
+          "max_quantity": 2,
+          "max_quantity_market": "0.0158",
+          "min_price": 3511201,
+          "max_price": 31600800,
+          "min_notional": 100,
+          "max_leverage": null,
+          "max_leverage_short": null,
+          "step": "0.00001",
+          "order_types": [
+            "limit_order",
+            "market_order"
+          ],
+          "symbol": "BTCINR",
+          "ecode": "I",
+          "bo_sl_safety_percent": 1,
+          "pair": "I-BTC_INR",
+          "status": "active"
+        },
+        "instrument": {
+          "pair": "I-BTC_INR",
+          "market": "BTCINR",
+          "quote": "INR",
+          "asset": "BTC",
+          "price_precision": 1,
+          "quantity_precision": 5,
+          "min_quantity": "0.00001",
+          "max_quantity": "2",
+          "min_notional": "100",
+          "min_price": "3511201",
+          "max_price": "31600800",
+          "step": "0.00001",
+          "observed_at": "2026-10-17 16:15:08.682299+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        },
+        "raw_candle": {
+          "open": 8175000,
+          "high": "8211416.6",
+          "low": "8171487.8",
+          "close": "8211416.5",
+          "volume": "0.012877",
+          "time": 1792252800000
+        },
+        "normalized_candle": {
+          "timestamp": "2026-10-17T16:00:00+00:00",
+          "open": "8175000",
+          "high": "8211416.6",
+          "low": "8171487.8",
+          "close": "8211416.5",
+          "volume": "0.012877",
+          "symbol": "I-BTC_INR",
+          "timeframe": "15m",
+          "quote_volume": ""
+        },
+        "price_kind": "COMPLETED_CANDLE_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "diagnostic": {
+          "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+          "symbol": "I-BTC_INR",
+          "quote_currency": "INR",
+          "instrument_observed_at": "2026-10-17T16:15:08.682299+00:00",
+          "instrument_kind": "public_metadata",
+          "configured_capital": "2000",
+          "configured_margin": "100",
+          "configured_leverage": "1",
+          "amount_type": "margin",
+          "reference_price": "8211416.5",
+          "quantity_step": "0.00001",
+          "minimum_quantity": "0.00001",
+          "minimum_notional": "100",
+          "risk_approved": false,
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "fee_slippage_verified": false,
+          "price_tick_server_verified": false,
+          "status": "NO_TRADE",
+          "candidate": {
+            "quantity": "0.00001",
+            "entry_price": "8219627.9165",
+            "stop_price": "8055235.358170",
+            "margin": "82.196279165",
+            "notional": "82.196279165",
+            "entry_fee": "0.082196279165",
+            "planned_stop_risk": "1.88714601727481830"
+          },
+          "theoretical_minimum": {
+            "quantity": "0.00002",
+            "notional": "164.39255833",
+            "margin": "164.39255833",
+            "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+          },
+          "estimated_entry": "8219627.9165",
+          "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+        },
+        "independent_bounds": {
+          "independent_exact_math": "PASS",
+          "binding_ceiling": "margin",
+          "candidate_matches_production": true,
+          "constrained_sizer_rejected": true,
+          "minimum_compliant_quantity": "0.00002",
+          "no_compliant_lot_within_configured_ceiling": true,
+          "risk_budget": "10",
+          "funding_and_executable_fill_verified": false
+        }
+      },
+      {
+        "pair": "I-ETH_INR",
+        "raw_public_instrument": {
+          "coindcx_name": "ETHINR",
+          "base_currency_short_name": "INR",
+          "target_currency_short_name": "ETH",
+          "target_currency_name": "Ethereum",
+          "base_currency_name": "Indian Rupee",
+          "base_currency_precision": 1,
+          "target_currency_precision": 4,
+          "min_quantity": "1E-7",
+          "max_quantity": 20,
+          "max_quantity_market": "0.5445",
+          "min_price": "81134.13333333333",
+          "max_price": "730207.2",
+          "min_notional": 100,
+          "max_leverage": null,
+          "max_leverage_short": null,
+          "step": "0.0001",
+          "order_types": [
+            "limit_order",
+            "market_order"
+          ],
+          "symbol": "ETHINR",
+          "ecode": "I",
+          "bo_sl_safety_percent": 1,
+          "pair": "I-ETH_INR",
+          "status": "active"
+        },
+        "instrument": {
+          "pair": "I-ETH_INR",
+          "market": "ETHINR",
+          "quote": "INR",
+          "asset": "ETH",
+          "price_precision": 1,
+          "quantity_precision": 4,
+          "min_quantity": "1E-7",
+          "max_quantity": "20",
+          "min_notional": "100",
+          "min_price": "81134.13333333333",
+          "max_price": "730207.2",
+          "step": "0.0001",
+          "observed_at": "2026-10-17 16:15:08.682299+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        },
+        "raw_candle": {
+          "open": 242800,
+          "high": "243720.5",
+          "low": "242047.3",
+          "close": 242721,
+          "volume": "0.437827",
+          "time": 1792252800000
+        },
+        "normalized_candle": {
+          "timestamp": "2026-10-17T16:00:00+00:00",
+          "open": "242800",
+          "high": "243720.5",
+          "low": "242047.3",
+          "close": "242721",
+          "volume": "0.437827",
+          "symbol": "I-ETH_INR",
+          "timeframe": "15m",
+          "quote_volume": ""
+        },
+        "price_kind": "COMPLETED_CANDLE_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "diagnostic": {
+          "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+          "symbol": "I-ETH_INR",
+          "quote_currency": "INR",
+          "instrument_observed_at": "2026-10-17T16:15:08.682299+00:00",
+          "instrument_kind": "public_metadata",
+          "configured_capital": "2000",
+          "configured_margin": "100",
+          "configured_leverage": "1",
+          "amount_type": "margin",
+          "reference_price": "242721",
+          "quantity_step": "0.0001",
+          "minimum_quantity": "1E-7",
+          "minimum_notional": "100",
+          "risk_approved": false,
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "fee_slippage_verified": false,
+          "price_tick_server_verified": false,
+          "status": "NO_TRADE",
+          "candidate": {
+            "quantity": "0.0004",
+            "entry_price": "242963.721",
+            "stop_price": "238104.44658",
+            "margin": "97.1854884",
+            "notional": "97.1854884",
+            "entry_fee": "0.0971854884",
+            "planned_stop_risk": "2.231283571885368"
+          },
+          "theoretical_minimum": {
+            "quantity": "0.0005",
+            "notional": "121.4818605",
+            "margin": "121.4818605",
+            "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+          },
+          "estimated_entry": "242963.721",
+          "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+        },
+        "independent_bounds": {
+          "independent_exact_math": "PASS",
+          "binding_ceiling": "margin",
+          "candidate_matches_production": true,
+          "constrained_sizer_rejected": true,
+          "minimum_compliant_quantity": "0.0005",
+          "no_compliant_lot_within_configured_ceiling": true,
+          "risk_budget": "10",
+          "funding_and_executable_fill_verified": false
+        }
+      },
+      {
+        "pair": "I-SOL_INR",
+        "raw_public_instrument": {
+          "coindcx_name": "SOLINR",
+          "base_currency_short_name": "INR",
+          "target_currency_short_name": "SOL",
+          "target_currency_name": "Solana",
+          "base_currency_name": "Indian Rupee",
+          "base_currency_precision": 1,
+          "target_currency_precision": 3,
+          "min_quantity": "0.01",
+          "max_quantity": 10000000,
+          "max_quantity_market": "14.2822",
+          "min_price": "3490.4666666666667",
+          "max_price": "31414.2",
+          "min_notional": 100,
+          "max_leverage": null,
+          "max_leverage_short": null,
+          "step": "0.001",
+          "order_types": [
+            "limit_order",
+            "market_order"
+          ],
+          "symbol": "SOLINR",
+          "ecode": "I",
+          "bo_sl_safety_percent": 1,
+          "pair": "I-SOL_INR",
+          "status": "active"
+        },
+        "instrument": {
+          "pair": "I-SOL_INR",
+          "market": "SOLINR",
+          "quote": "INR",
+          "asset": "SOL",
+          "price_precision": 1,
+          "quantity_precision": 3,
+          "min_quantity": "0.01",
+          "max_quantity": "10000000",
+          "min_notional": "100",
+          "min_price": "3490.4666666666667",
+          "max_price": "31414.2",
+          "step": "0.001",
+          "observed_at": "2026-10-17 16:15:08.682299+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        },
+        "raw_candle": {
+          "open": "10412.2",
+          "high": "10486.8",
+          "low": "10405.4",
+          "close": "10486.8",
+          "volume": "5.505487",
+          "time": 1792252800000
+        },
+        "normalized_candle": {
+          "timestamp": "2026-10-17T16:00:00+00:00",
+          "open": "10412.2",
+          "high": "10486.8",
+          "low": "10405.4",
+          "close": "10486.8",
+          "volume": "5.505487",
+          "symbol": "I-SOL_INR",
+          "timeframe": "15m",
+          "quote_volume": ""
+        },
+        "price_kind": "COMPLETED_CANDLE_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "diagnostic": {
+          "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+          "symbol": "I-SOL_INR",
+          "quote_currency": "INR",
+          "instrument_observed_at": "2026-10-17T16:15:08.682299+00:00",
+          "instrument_kind": "public_metadata",
+          "configured_capital": "2000",
+          "configured_margin": "100",
+          "configured_leverage": "1",
+          "amount_type": "margin",
+          "reference_price": "10486.8",
+          "quantity_step": "0.001",
+          "minimum_quantity": "0.01",
+          "minimum_notional": "100",
+          "risk_approved": false,
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "fee_slippage_verified": false,
+          "price_tick_server_verified": false,
+          "status": "NO_TRADE",
+          "candidate": {
+            "quantity": "0.009",
+            "entry_price": "10497.2868",
+            "stop_price": "10287.341064",
+            "margin": "94.4755812",
+            "notional": "94.4755812",
+            "entry_fee": "0.0944755812",
+            "planned_stop_risk": "2.169066758282424"
+          },
+          "theoretical_minimum": {
+            "quantity": "0.01",
+            "notional": "104.972868",
+            "margin": "104.972868",
+            "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+          },
+          "estimated_entry": "10497.2868",
+          "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+        },
+        "independent_bounds": {
+          "independent_exact_math": "PASS",
+          "binding_ceiling": "margin",
+          "candidate_matches_production": true,
+          "constrained_sizer_rejected": true,
+          "minimum_compliant_quantity": "0.01",
+          "no_compliant_lot_within_configured_ceiling": true,
+          "risk_budget": "10",
+          "funding_and_executable_fill_verified": false
+        }
+      },
+      {
+        "pair": "I-DOGE_INR",
+        "raw_public_instrument": {
+          "coindcx_name": "DOGEINR",
+          "base_currency_short_name": "INR",
+          "target_currency_short_name": "DOGE",
+          "target_currency_name": "Doge",
+          "base_currency_name": "Indian Rupee",
+          "base_currency_precision": 4,
+          "target_currency_precision": 0,
+          "min_quantity": "0.001",
+          "max_quantity": 200000,
+          "max_quantity_market": "5760.368664",
+          "min_price": "2.6734333333333336",
+          "max_price": "24.0609",
+          "min_notional": 100,
+          "max_leverage": null,
+          "max_leverage_short": null,
+          "step": 1,
+          "order_types": [
+            "limit_order",
+            "market_order"
+          ],
+          "symbol": "DOGEINR",
+          "ecode": "I",
+          "bo_sl_safety_percent": 1,
+          "pair": "I-DOGE_INR",
+          "status": "active"
+        },
+        "instrument": {
+          "pair": "I-DOGE_INR",
+          "market": "DOGEINR",
+          "quote": "INR",
+          "asset": "DOGE",
+          "price_precision": 4,
+          "quantity_precision": 0,
+          "min_quantity": "0.001",
+          "max_quantity": "200000",
+          "min_notional": "100",
+          "min_price": "2.6734333333333336",
+          "max_price": "24.0609",
+          "step": "1",
+          "observed_at": "2026-10-17 16:15:08.682299+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        },
+        "raw_candle": {
+          "open": "7.956",
+          "high": "8.0203",
+          "low": "7.956",
+          "close": "7.9596",
+          "volume": "7251.936349",
+          "time": 1792252800000
+        },
+        "normalized_candle": {
+          "timestamp": "2026-10-17T16:00:00+00:00",
+          "open": "7.956",
+          "high": "8.0203",
+          "low": "7.956",
+          "close": "7.9596",
+          "volume": "7251.936349",
+          "symbol": "I-DOGE_INR",
+          "timeframe": "15m",
+          "quote_volume": ""
+        },
+        "price_kind": "COMPLETED_CANDLE_CLOSE_NOT_EXECUTABLE_QUOTE",
+        "diagnostic": {
+          "label": "HYPOTHETICAL_SIZE_DIAGNOSTIC_NOT_ENTRY_APPROVAL",
+          "symbol": "I-DOGE_INR",
+          "quote_currency": "INR",
+          "instrument_observed_at": "2026-10-17T16:15:08.682299+00:00",
+          "instrument_kind": "public_metadata",
+          "configured_capital": "2000",
+          "configured_margin": "100",
+          "configured_leverage": "1",
+          "amount_type": "margin",
+          "reference_price": "7.9596",
+          "quantity_step": "1",
+          "minimum_quantity": "0.001",
+          "minimum_notional": "100",
+          "risk_approved": false,
+          "orders_submitted": 0,
+          "live_trading_enabled": false,
+          "fee_slippage_verified": false,
+          "price_tick_server_verified": false,
+          "status": "NO_TRADE",
+          "candidate": {
+            "quantity": "12",
+            "entry_price": "7.9675596",
+            "stop_price": "7.808208408",
+            "margin": "95.6107152",
+            "notional": "95.6107152",
+            "entry_fee": "0.0956107152",
+            "planned_stop_risk": "2.195128322491104"
+          },
+          "theoretical_minimum": {
+            "quantity": "13",
+            "notional": "103.5782748",
+            "margin": "103.5782748",
+            "note": "Arithmetic lower bound only, not a new configuration or permission; excludes margin-plus-fee cash and other gate checks."
+          },
+          "estimated_entry": "7.9675596",
+          "reason": "CONFIGURED_SIZE_CANNOT_SAFELY_MEET_PUBLIC_MINIMUMS"
+        },
+        "independent_bounds": {
+          "independent_exact_math": "PASS",
+          "binding_ceiling": "margin",
+          "candidate_matches_production": true,
+          "constrained_sizer_rejected": true,
+          "minimum_compliant_quantity": "13",
+          "no_compliant_lot_within_configured_ceiling": true,
+          "risk_budget": "10",
+          "funding_and_executable_fill_verified": false
+        }
+      }
+    ]
+  },
+  "quarantine_verification": {
+    "archive_sha256": "2ff6f63c3c03083592d53767c13ab06056189d7c1b52ec798e081cd64c2a3835",
+    "verified_original_files": 85,
+    "raw_eth_open_ms": 1791934200000,
+    "raw_15m_volume": "0.086267",
+    "one_minute_volume_sum": "0.085028",
+    "difference_eth": "0.001239",
+    "provider_cause": "UNVERIFIED",
+    "data_preserved": true,
+    "guarded_unexpected_calls": 0,
+    "symbol_quarantines": [
+      {
+        "pair": "I-BTC_INR",
+        "input": "reports/phase8e-history/I-BTC_INR.csv",
+        "rows": 11520,
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "loader_rejection": "BLOCKED: historical data needs an explicit quality review before use",
+        "csv_sha256": "5127ce218526c19d462bb6e80c6855f442ef1a47c3c57b05757d32d1b3052c21"
+      },
+      {
+        "pair": "I-ETH_INR",
+        "input": "reports/phase8h-original/quarantine/I-ETH_INR.csv",
+        "rows": 11520,
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "SOURCE_INTERVAL_MISMATCH",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "loader_rejection": "BLOCKED: historical data needs an explicit quality review before use",
+        "csv_sha256": "ef035c02465f4801abc26d5d260aac36922ac5ec9dd5aa17fcc291453bca2c3c"
+      },
+      {
+        "pair": "I-SOL_INR",
+        "input": "reports/phase8e-history/I-SOL_INR.csv",
+        "rows": 11520,
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "loader_rejection": "BLOCKED: historical data needs an explicit quality review before use",
+        "csv_sha256": "feafe1db0c4170115493d66c6ef76b37da65066e2638fd0410eb53560a5142c3"
+      },
+      {
+        "pair": "I-DOGE_INR",
+        "input": "reports/phase8e-history/I-DOGE_INR.csv",
+        "rows": 11520,
+        "eligible": false,
+        "reasons": [
+          "SOURCE_INGESTION_REJECTED",
+          "ZERO_VOLUME",
+          "LIQUIDITY_REVIEW_REQUIRED"
+        ],
+        "loader_rejection": "BLOCKED: historical data needs an explicit quality review before use",
+        "csv_sha256": "de7caf6e441a3884d34b0c84cb37d63ede710391fa50b7280a8dbfb48d8081f8"
+      }
+    ],
+    "network_requests": 0,
+    "private_requests": 0,
+    "credentials_used": false,
+    "orders_submitted": 0,
+    "backtests_run": 0
+  },
+  "collector": {
+    "path": "reports/phase8i/collect.py",
+    "sha256": "81c207984400f73991cc3a0e95280ebb20bb8b5de2a93bef1b2627f4d42ce4d0",
+    "scope": "IGNORED_AUDIT_ARTIFACT_NOT_AN_ENTRY_PATH",
+    "guarded_diagnostics": true
+  },
+  "private_requests": 0,
+  "credentials_used": false,
+  "orders_submitted": 0,
+  "backtests_run": 0,
+  "live_trading_enabled": false,
+  "short_entries_enabled": false,
+  "performance": null,
+  "existing_application_or_tests_changed": false,
+  "limits_changed": false
+}

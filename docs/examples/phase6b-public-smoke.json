@@ -1,0 +1,31 @@
+{
+  "evidence_kind": "ACTUAL_PUBLIC_READ_ONLY_CLI_SMOKE",
+  "at": "2026-10-17T11:10:07.998429+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "symbol": "I-BTC_INR",
+  "observed_health": "DATA_BLOCKED",
+  "observed_reason": "ZERO_VOLUME",
+  "start_exit": 0,
+  "status_exit": 0,
+  "stop_exit": 0,
+  "final_health": "STOPPED",
+  "equity": "2000",
+  "entries_today": 0,
+  "processed_candles": 0,
+  "emergency_halted": true,
+  "orders_submitted": 0,
+  "live_trading_enabled": false,
+  "qualification": "NOT_ESTABLISHED; public connectivity is not liquidity qualification",
+  "public_routes": [
+    "https://api.coindcx.com/exchange/v1/markets",
+    "https://api.coindcx.com/exchange/v1/markets_details",
+    "https://api.coindcx.com/market_data/candles"
+  ],
+  "documentation": {
+    "url": "https://docs.coindcx.com/",
+    "http_status": 200,
+    "sha256": "f1e24279057778b63867795409a3391a829bbb365aabee7780f8be15559635fe"
+  }
+}

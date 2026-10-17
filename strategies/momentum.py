@@ -1,14 +1,15 @@
 from dataclasses import dataclass
 from decimal import Decimal
-from typing import Sequence
+from typing import ClassVar, Sequence
 
 from config import decimal_value
 from data.models import Candle
-from strategies.base import Signal
+from strategies.base import Direction, ValidatedStrategy
 
 
 @dataclass(frozen=True)
-class Momentum:
+class Momentum(ValidatedStrategy):
+    name: ClassVar[str] = "momentum"
     lookback: int = 12
     threshold: Decimal = Decimal("0.01")
 
@@ -21,12 +22,11 @@ class Momentum:
     def minimum_bars(self) -> int:
         return self.lookback + 1
 
-    def signal(self, candles: Sequence[Candle]) -> Signal:
-        if len(candles) < self.minimum_bars:
-            return Signal.HOLD
+    def _calculate(self, candles: Sequence[Candle]):
         change = candles[-1].close / candles[-self.minimum_bars].close - 1
+        indicators = {"return_fraction": change, "threshold": self.threshold}
         if change >= self.threshold:
-            return Signal.BUY
+            return Direction.LONG, "POSITIVE_MOMENTUM", "Return meets the positive threshold.", indicators
         if change <= -self.threshold:
-            return Signal.SELL
-        return Signal.HOLD
+            return Direction.SHORT, "NEGATIVE_MOMENTUM", "Return meets the negative threshold.", indicators
+        return Direction.NO_TRADE, "BELOW_THRESHOLD", "Return is inside the momentum thresholds.", indicators

@@ -1,0 +1,1272 @@
+{
+  "phase": "8B",
+  "label": "PUBLIC_READ_ONLY_QUALIFICATION_AUDIT_NO_MARKET_PERFORMANCE",
+  "native_windows": {
+    "status": "UNVERIFIED",
+    "executed": false,
+    "passed": null,
+    "failed": null,
+    "errors": null,
+    "skipped": null,
+    "reason": "Only Linux execution environment available; no attached Windows runner"
+  },
+  "history": {
+    "phase": "8B",
+    "label": "ACTUAL_PUBLIC_COINDCX_HISTORY_NOT_QUALIFIED_MARKET_PERFORMANCE",
+    "captured_at": "2026-10-17T13:26:54.163881+00:00",
+    "historical_quality_cutoff": "2026-10-17T13:15:00+00:00",
+    "requested_start": "2026-09-17T12:45:00+00:00",
+    "requested_end": "2026-10-17T13:15:00+00:00",
+    "actual_seconds": 10.998060382999995,
+    "fixed_assets_before_fetch": [
+      "BTC",
+      "ETH",
+      "SOL",
+      "DOGE"
+    ],
+    "environment": {
+      "system": "Linux",
+      "python": "3.12.14",
+      "sqlite": "3.53.1"
+    },
+    "markets": [
+      {
+        "asset": "BTC",
+        "market": {
+          "pair": "I-BTC_INR",
+          "symbol": "BTCINR",
+          "quote_currency": "INR",
+          "asset_currency": "BTC",
+          "status": "active",
+          "active_confirmed": true
+        },
+        "kind": "historical",
+        "source": "https://api.coindcx.com/market_data/candles",
+        "historical_listing_identity_verified": false,
+        "status": "BLOCKED",
+        "quality": {
+          "symbol": "I-BTC_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T13:15:00+00:00",
+          "status": "ZERO_VOLUME",
+          "eligible": false,
+          "reasons": [
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 2882,
+          "invalid_rows": 0,
+          "completed_rows": 2882,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 2882,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 1,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false
+        },
+        "csv": "I-BTC_INR.csv",
+        "csv_sha256": "63e60007cb51dfb332d1da0f360981343dad4cf15964f977a7cdf8fe06276e5a",
+        "first_returned_open": "2026-09-17T12:45:00+00:00",
+        "last_returned_open": "2026-10-17T13:00:00+00:00",
+        "symbol_bound_by": "exact public pair query and current active discovery; no per-candle identity field",
+        "history_pages_sha256": [
+          "5864f4329b4127e562e9c0807f4d1e5f1b9a4d3a3195a6ea5a1c87ba53526836",
+          "97390197c563753b7af84287e5b18ca205f6b80ad2877d8e45adbfde84b9a2ac",
+          "f7372d78c01baae53713796c796c46f820fa3d6dc7799e1893ca38f47a058f75"
+        ],
+        "public_instrument": {
+          "pair": "I-BTC_INR",
+          "market": "BTCINR",
+          "quote": "INR",
+          "asset": "BTC",
+          "price_precision": 1,
+          "quantity_precision": 5,
+          "min_quantity": "0.00001",
+          "max_quantity": "2",
+          "min_notional": "100",
+          "min_price": "3511201",
+          "max_price": "31600800",
+          "step": "0.00001",
+          "observed_at": "2026-10-17 13:26:58.184001+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        }
+      },
+      {
+        "asset": "ETH",
+        "market": {
+          "pair": "I-ETH_INR",
+          "symbol": "ETHINR",
+          "quote_currency": "INR",
+          "asset_currency": "ETH",
+          "status": "active",
+          "active_confirmed": true
+        },
+        "kind": "historical",
+        "source": "https://api.coindcx.com/market_data/candles",
+        "historical_listing_identity_verified": false,
+        "status": "BLOCKED",
+        "quality": {
+          "symbol": "I-ETH_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T13:15:00+00:00",
+          "status": "ZERO_VOLUME",
+          "eligible": false,
+          "reasons": [
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 2882,
+          "invalid_rows": 0,
+          "completed_rows": 2882,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 2882,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 4,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false
+        },
+        "csv": "I-ETH_INR.csv",
+        "csv_sha256": "b5f627301f14c5c24e90080e605057732b868a1bd3318536a540009a1913c39a",
+        "first_returned_open": "2026-09-17T12:45:00+00:00",
+        "last_returned_open": "2026-10-17T13:00:00+00:00",
+        "symbol_bound_by": "exact public pair query and current active discovery; no per-candle identity field",
+        "history_pages_sha256": [
+          "9f5df1ad6688f66e811952facd041671588c8598a9ad0f351d48b3b944fe52b7",
+          "b23d77375e370af2cced28c3c62c24729e9a6a8199dcb0a467962823e87787fa",
+          "ce38a0a89277c1c0083272ac67f64c0428d1f85f3b07446bf491bd19fae14c34"
+        ],
+        "public_instrument": {
+          "pair": "I-ETH_INR",
+          "market": "ETHINR",
+          "quote": "INR",
+          "asset": "ETH",
+          "price_precision": 1,
+          "quantity_precision": 4,
+          "min_quantity": "1E-7",
+          "max_quantity": "20",
+          "min_notional": "100",
+          "min_price": "81419.3",
+          "max_price": "732773.7",
+          "step": "0.0001",
+          "observed_at": "2026-10-17 13:27:00.169129+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        }
+      },
+      {
+        "asset": "SOL",
+        "market": {
+          "pair": "I-SOL_INR",
+          "symbol": "SOLINR",
+          "quote_currency": "INR",
+          "asset_currency": "SOL",
+          "status": "active",
+          "active_confirmed": true
+        },
+        "kind": "historical",
+        "source": "https://api.coindcx.com/market_data/candles",
+        "historical_listing_identity_verified": false,
+        "status": "BLOCKED",
+        "quality": {
+          "symbol": "I-SOL_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T13:15:00+00:00",
+          "status": "ZERO_VOLUME",
+          "eligible": false,
+          "reasons": [
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 2882,
+          "invalid_rows": 0,
+          "completed_rows": 2882,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 2882,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 4,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false
+        },
+        "csv": "I-SOL_INR.csv",
+        "csv_sha256": "65ed1a85086393646fb4f672db7683bd82e7c87561fa380517c29eb452e1cd62",
+        "first_returned_open": "2026-09-17T12:45:00+00:00",
+        "last_returned_open": "2026-10-17T13:00:00+00:00",
+        "symbol_bound_by": "exact public pair query and current active discovery; no per-candle identity field",
+        "history_pages_sha256": [
+          "3700d33fc86af7164b0002c5e3871ff2c5ce4ea57b9a261b66fb201eab109309",
+          "0cfabfb0b3786248c0d53b7731cc96b5e4b7b09caa5bf1f06f592d018f5da270",
+          "7b5a40a15c00afd1ea54215397a10cd49d5ecf47c602e3a7d7bb47e85e6cb47e"
+        ],
+        "public_instrument": {
+          "pair": "I-SOL_INR",
+          "market": "SOLINR",
+          "quote": "INR",
+          "asset": "SOL",
+          "price_precision": 1,
+          "quantity_precision": 3,
+          "min_quantity": "0.01",
+          "max_quantity": "10000000",
+          "min_notional": "100",
+          "min_price": "3468.0333333333333",
+          "max_price": "31212.3",
+          "step": "0.001",
+          "observed_at": "2026-10-17 13:27:02.744224+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        }
+      },
+      {
+        "asset": "DOGE",
+        "market": {
+          "pair": "I-DOGE_INR",
+          "symbol": "DOGEINR",
+          "quote_currency": "INR",
+          "asset_currency": "DOGE",
+          "status": "active",
+          "active_confirmed": true
+        },
+        "kind": "historical",
+        "source": "https://api.coindcx.com/market_data/candles",
+        "historical_listing_identity_verified": false,
+        "status": "BLOCKED",
+        "quality": {
+          "symbol": "I-DOGE_INR",
+          "timeframe": "15m",
+          "quote_currency": "INR",
+          "data_kind": "historical",
+          "as_of": "2026-10-17T13:15:00+00:00",
+          "status": "ZERO_VOLUME",
+          "eligible": false,
+          "reasons": [
+            "ZERO_VOLUME",
+            "LIQUIDITY_REVIEW_REQUIRED"
+          ],
+          "warnings": [
+            "QUOTE_LIQUIDITY_NOT_VERIFIED"
+          ],
+          "input_rows": 2882,
+          "invalid_rows": 0,
+          "completed_rows": 2882,
+          "excluded_rows": [],
+          "duplicate_timestamps": 0,
+          "out_of_order": false,
+          "expected_bars": 2882,
+          "missing_bars": 0,
+          "completeness": "1",
+          "zero_volume_bars": 29,
+          "liquidity": "NOT_ASSESSED",
+          "policy": {
+            "min_history_bars": 2880,
+            "min_completeness": "1",
+            "max_staleness_minutes": 30,
+            "max_zero_volume_fraction": "0",
+            "min_quote_volume_per_bar": null,
+            "require_verified_liquidity": true
+          },
+          "live_trading_enabled": false
+        },
+        "csv": "I-DOGE_INR.csv",
+        "csv_sha256": "158adccc71aee8b93c008b85b65982c2edce6aa91c7a1b4bbe91bebba257aae1",
+        "first_returned_open": "2026-09-17T12:45:00+00:00",
+        "last_returned_open": "2026-10-17T13:00:00+00:00",
+        "symbol_bound_by": "exact public pair query and current active discovery; no per-candle identity field",
+        "history_pages_sha256": [
+          "e81634b02a60e5541fc5aea952d232de897d476fd0fe29a5c928d3dc909ecb0a",
+          "f88991a7d73abe851424f797fdd96f0418960524fa904ef2278168de6f85bb2a",
+          "7e5d222c41288b58d9b319e40c26de5ef38f7a43a5965ba5979b586c39890661"
+        ],
+        "public_instrument": {
+          "pair": "I-DOGE_INR",
+          "market": "DOGEINR",
+          "quote": "INR",
+          "asset": "DOGE",
+          "price_precision": 4,
+          "quantity_precision": 0,
+          "min_quantity": "0.001",
+          "max_quantity": "200000",
+          "min_notional": "100",
+          "min_price": "2.675666666666667",
+          "max_price": "24.081",
+          "step": "1",
+          "observed_at": "2026-10-17 13:27:05.161344+00:00",
+          "kind": "public_metadata",
+          "limit_orders_supported": true
+        }
+      }
+    ],
+    "request_manifest": [
+      {
+        "at": "2026-10-17T13:26:54.876266+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/exchange/v1/markets",
+        "http": 200,
+        "file": "public-0001.json",
+        "sha256": "1a856ded7785b498f3a7a3782a3080c4fdcce21dc8e38c1bb84aafc76b3cd889"
+      },
+      {
+        "at": "2026-10-17T13:26:56.134668+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/exchange/v1/markets_details",
+        "http": 200,
+        "file": "public-0002.json",
+        "sha256": "543f500a0eb4f62d7617d70d6aab15d4c10ba13eb1124da2dfbd679bbde2865e"
+      },
+      {
+        "at": "2026-10-17T13:26:56.544365+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0003.json",
+        "sha256": "5864f4329b4127e562e9c0807f4d1e5f1b9a4d3a3195a6ea5a1c87ba53526836"
+      },
+      {
+        "at": "2026-10-17T13:26:56.892433+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0004.json",
+        "sha256": "97390197c563753b7af84287e5b18ca205f6b80ad2877d8e45adbfde84b9a2ac"
+      },
+      {
+        "at": "2026-10-17T13:26:57.477071+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0005.json",
+        "sha256": "f7372d78c01baae53713796c796c46f820fa3d6dc7799e1893ca38f47a058f75"
+      },
+      {
+        "at": "2026-10-17T13:26:58.174132+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/exchange/v1/markets_details",
+        "http": 200,
+        "file": "public-0006.json",
+        "sha256": "a0af9e3f42dd3461bb7478024c9c2d884de001dbfad7f6d1ad583eee22736b30"
+      },
+      {
+        "at": "2026-10-17T13:26:58.818634+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-ETH_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0007.json",
+        "sha256": "9f5df1ad6688f66e811952facd041671588c8598a9ad0f351d48b3b944fe52b7"
+      },
+      {
+        "at": "2026-10-17T13:26:59.088530+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-ETH_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0008.json",
+        "sha256": "b23d77375e370af2cced28c3c62c24729e9a6a8199dcb0a467962823e87787fa"
+      },
+      {
+        "at": "2026-10-17T13:26:59.654970+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-ETH_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0009.json",
+        "sha256": "ce38a0a89277c1c0083272ac67f64c0428d1f85f3b07446bf491bd19fae14c34"
+      },
+      {
+        "at": "2026-10-17T13:27:00.158684+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/exchange/v1/markets_details",
+        "http": 200,
+        "file": "public-0010.json",
+        "sha256": "c3f99d0cfcece9f343fb3cfc45a49bea4ebbc86ff5aebf2fb7e0334064cf6bc0"
+      },
+      {
+        "at": "2026-10-17T13:27:00.570218+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-SOL_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0011.json",
+        "sha256": "3700d33fc86af7164b0002c5e3871ff2c5ce4ea57b9a261b66fb201eab109309"
+      },
+      {
+        "at": "2026-10-17T13:27:01.162360+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-SOL_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0012.json",
+        "sha256": "0cfabfb0b3786248c0d53b7731cc96b5e4b7b09caa5bf1f06f592d018f5da270"
+      },
+      {
+        "at": "2026-10-17T13:27:01.749828+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-SOL_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0013.json",
+        "sha256": "7b5a40a15c00afd1ea54215397a10cd49d5ecf47c602e3a7d7bb47e85e6cb47e"
+      },
+      {
+        "at": "2026-10-17T13:27:02.734272+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/exchange/v1/markets_details",
+        "http": 200,
+        "file": "public-0014.json",
+        "sha256": "8e3c83455392ec238370ee7760e461ee7c721f9402c667ca3a79f411b9add10a"
+      },
+      {
+        "at": "2026-10-17T13:27:03.020599+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-DOGE_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0015.json",
+        "sha256": "e81634b02a60e5541fc5aea952d232de897d476fd0fe29a5c928d3dc909ecb0a"
+      },
+      {
+        "at": "2026-10-17T13:27:03.512680+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-DOGE_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0016.json",
+        "sha256": "f88991a7d73abe851424f797fdd96f0418960524fa904ef2278168de6f85bb2a"
+      },
+      {
+        "at": "2026-10-17T13:27:03.984392+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-DOGE_INR&startTime=1789649100000",
+        "http": 200,
+        "file": "public-0017.json",
+        "sha256": "7e5d222c41288b58d9b319e40c26de5ef38f7a43a5965ba5979b586c39890661"
+      },
+      {
+        "at": "2026-10-17T13:27:05.151319+00:00",
+        "method": "GET",
+        "url": "https://api.coindcx.com/exchange/v1/markets_details",
+        "http": 200,
+        "file": "public-0018.json",
+        "sha256": "adf7cb4df612b399896a8929c926c199c0e904ae277044c1944415018bc5ad09"
+      }
+    ],
+    "private_requests": 0,
+    "orders_submitted": 0,
+    "live_trading_enabled": false,
+    "backtests_run": 0,
+    "out_of_sample_tests_run": 0,
+    "limitations": [
+      "Fixed four-asset INR sample, not an exhaustive exchange or listing-history survey.",
+      "Current active status does not authenticate historical listing identity or avoid survivorship bias.",
+      "Asset volume is not verified quote liquidity; no threshold or verification flag is invented.",
+      "No real-data performance is calculated; CSVs keep original rejection and raw provenance.",
+      "A 30-day warmup window alone cannot supply three 30-day evaluation periods."
+    ]
+  },
+  "csv_reimport_checks": [
+    {
+      "pair": "I-BTC_INR",
+      "command": [
+        "/workspace/Coindcx-trading-bot/.venv/bin/python",
+        "-m",
+        "cli",
+        "data",
+        "validate",
+        "--input",
+        "reports/phase8b-history/I-BTC_INR.csv",
+        "--as-of",
+        "2026-10-17T13:15:00+00:00"
+      ],
+      "exit_code": 2,
+      "eligible": false,
+      "reasons": [
+        "SOURCE_INGESTION_REJECTED",
+        "ZERO_VOLUME",
+        "LIQUIDITY_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "pair": "I-ETH_INR",
+      "command": [
+        "/workspace/Coindcx-trading-bot/.venv/bin/python",
+        "-m",
+        "cli",
+        "data",
+        "validate",
+        "--input",
+        "reports/phase8b-history/I-ETH_INR.csv",
+        "--as-of",
+        "2026-10-17T13:15:00+00:00"
+      ],
+      "exit_code": 2,
+      "eligible": false,
+      "reasons": [
+        "SOURCE_INGESTION_REJECTED",
+        "ZERO_VOLUME",
+        "LIQUIDITY_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "pair": "I-SOL_INR",
+      "command": [
+        "/workspace/Coindcx-trading-bot/.venv/bin/python",
+        "-m",
+        "cli",
+        "data",
+        "validate",
+        "--input",
+        "reports/phase8b-history/I-SOL_INR.csv",
+        "--as-of",
+        "2026-10-17T13:15:00+00:00"
+      ],
+      "exit_code": 2,
+      "eligible": false,
+      "reasons": [
+        "SOURCE_INGESTION_REJECTED",
+        "ZERO_VOLUME",
+        "LIQUIDITY_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "pair": "I-DOGE_INR",
+      "command": [
+        "/workspace/Coindcx-trading-bot/.venv/bin/python",
+        "-m",
+        "cli",
+        "data",
+        "validate",
+        "--input",
+        "reports/phase8b-history/I-DOGE_INR.csv",
+        "--as-of",
+        "2026-10-17T13:15:00+00:00"
+      ],
+      "exit_code": 2,
+      "eligible": false,
+      "reasons": [
+        "SOURCE_INGESTION_REJECTED",
+        "ZERO_VOLUME",
+        "LIQUIDITY_REVIEW_REQUIRED"
+      ]
+    }
+  ],
+  "paper": {
+    "phase": 8,
+    "label": "ACTUAL_PUBLIC_DATA",
+    "environment": {
+      "python": "3.12.14",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "sqlite": "3.53.1"
+    },
+    "runner_sha256": "ce25688d97e9e3dab44ae592c013a912e0320d5ef4313f9b0b2b61cefbbfbaf0",
+    "started_at": "2026-10-17T13:27:30.660146+00:00",
+    "ended_at": "2026-10-17T13:28:34.346107+00:00",
+    "actual_seconds_including_shutdown": 63.68597684600002,
+    "requested_seconds": 60,
+    "pair": "I-BTC_INR",
+    "confirmed_active_inr_markets": 339,
+    "worker_exit_code": 0,
+    "shutdown_error": null,
+    "completed_public_fetches": 5,
+    "observed_public_fetch_failures": 0,
+    "injected_timeouts": 0,
+    "public_http_requests": 25,
+    "non_200_responses": 0,
+    "processed_candles": 0,
+    "simulated_entries": 0,
+    "simulated_closed_trades": 0,
+    "fetches": [
+      {
+        "at": "2026-10-17T13:27:33.304078+00:00",
+        "outcome": "PUBLIC_FETCH_OK",
+        "file": "batch-0001.json",
+        "rows": 2882,
+        "seconds": 2.5876991190000354,
+        "first_request": 1,
+        "last_request": 5,
+        "sha256": "a6e6ca24f59ea788ba46d2a57270f128b706b2ea285f3c9c0177fbb3bf102b1d",
+        "synthetic_fault": false
+      },
+      {
+        "at": "2026-10-17T13:27:46.266282+00:00",
+        "outcome": "PUBLIC_FETCH_OK",
+        "file": "batch-0002.json",
+        "rows": 2882,
+        "seconds": 2.9166374140000357,
+        "first_request": 6,
+        "last_request": 10,
+        "sha256": "7fbab5bac819a254d870ea8e74c26c321e46154d82a40943ecedfadca06818b4",
+        "synthetic_fault": false
+      },
+      {
+        "at": "2026-10-17T13:27:58.670071+00:00",
+        "outcome": "PUBLIC_FETCH_OK",
+        "file": "batch-0003.json",
+        "rows": 2882,
+        "seconds": 2.3653114319999986,
+        "first_request": 11,
+        "last_request": 15,
+        "sha256": "c5261215d8b9b3932f2141aab0d066bd29e4b1517a52dd7fc376d837160ea5c4",
+        "synthetic_fault": false
+      },
+      {
+        "at": "2026-10-17T13:28:11.196108+00:00",
+        "outcome": "PUBLIC_FETCH_OK",
+        "file": "batch-0004.json",
+        "rows": 2882,
+        "seconds": 2.4883601550000094,
+        "first_request": 16,
+        "last_request": 20,
+        "sha256": "678293a9df79f972ff8b89901189c412b5fcc96333c16192e536e64af2d9d513",
+        "synthetic_fault": false
+      },
+      {
+        "at": "2026-10-17T13:28:24.238172+00:00",
+        "outcome": "PUBLIC_FETCH_OK",
+        "file": "batch-0005.json",
+        "rows": 2882,
+        "seconds": 3.009291049000012,
+        "first_request": 21,
+        "last_request": 25,
+        "sha256": "9c0669b3fbb4b2aaced0fb3772358f9c7070364b25c8f0505ace2ba1ef9df324",
+        "synthetic_fault": false
+      }
+    ],
+    "private_requests": 0,
+    "orders_submitted": 0,
+    "limitations": [
+      "Bounded safe-rejection/recovery evidence, not 24/7 or eligible-fill qualification.",
+      "Injected faults are not observed exchange failures; candles are never synthesized.",
+      "Daily entry count is for this short run's UTC accounting day."
+    ]
+  },
+  "paper_qualification_status": "BLOCKED",
+  "paper_scope": "bounded safe-rejection diagnostic, not eligible-fill qualification",
+  "paper_started_ist": "2026-10-17T18:57:30.660146+05:30",
+  "paper_ended_ist": "2026-10-17T18:58:34.346107+05:30",
+  "paper_metrics": {
+    "completed_data_fetches": 5,
+    "market_data_rejections": 5,
+    "strategy_signals_generated": 0,
+    "entry_signals_rejected": 0,
+    "signals_note": "All batches rejected before strategy evaluation; rejected data cycles are not rejected entry signals.",
+    "processed_candles": 0,
+    "eligible_candles_processed": 0,
+    "simulated_entries": 0,
+    "simulated_closed_trades": 0,
+    "fees_inr": "0",
+    "slippage_cost_inr": "0",
+    "starting_equity_inr": "2000",
+    "final_equity_inr": "2000",
+    "equity_change_inr": "0",
+    "open_position": null,
+    "realized_pnl_inr": "0",
+    "emergency_halted": true,
+    "last_successful_qualified_data_at": null,
+    "current_market_mark_available": false
+  },
+  "paper_quality": {
+    "symbol": "I-BTC_INR",
+    "timeframe": "15m",
+    "quote_currency": "INR",
+    "data_kind": "historical",
+    "as_of": "2026-10-17T13:28:24.263400+00:00",
+    "status": "ZERO_VOLUME",
+    "eligible": false,
+    "reasons": [
+      "ZERO_VOLUME",
+      "LIQUIDITY_REVIEW_REQUIRED"
+    ],
+    "warnings": [
+      "QUOTE_LIQUIDITY_NOT_VERIFIED"
+    ],
+    "input_rows": 2882,
+    "invalid_rows": 0,
+    "completed_rows": 2882,
+    "excluded_rows": [],
+    "duplicate_timestamps": 0,
+    "out_of_order": false,
+    "expected_bars": 2882,
+    "missing_bars": 0,
+    "completeness": "1",
+    "zero_volume_bars": 1,
+    "liquidity": "NOT_ASSESSED",
+    "policy": {
+      "min_history_bars": 2880,
+      "min_completeness": "1",
+      "max_staleness_minutes": 30,
+      "max_zero_volume_fraction": "0",
+      "min_quote_volume_per_bar": null,
+      "require_verified_liquidity": true
+    },
+    "live_trading_enabled": false
+  },
+  "paper_final_status": {
+    "mode": "paper",
+    "symbol": "I-BTC_INR",
+    "data_kind": "historical",
+    "fills": "SIMULATED_ESTIMATES",
+    "live_trading_enabled": false,
+    "orders_submitted": 0,
+    "health": "STOPPED",
+    "session": {
+      "configuration": {
+        "contract": "public-15m-v1",
+        "engine": "1cae370a54fcbc90fc32c9f0e2d8b19baa2fb61c96912e170b95d65b8f938d10",
+        "parameters": {
+          "fast": 5,
+          "slow": 20
+        },
+        "poll_seconds": 10,
+        "strategy": "sma_cross"
+      },
+      "entry_after": "2026-10-17T13:15:00+00:00",
+      "events": [
+        {
+          "at": "2026-10-17T13:27:30.731933+00:00",
+          "health": "STARTING",
+          "reason": "STARTING"
+        },
+        {
+          "at": "2026-10-17T13:27:30.734509+00:00",
+          "health": "STARTING",
+          "reason": "STARTING"
+        },
+        {
+          "at": "2026-10-17T13:27:30.736996+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:27:33.329066+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:27:33.361755+00:00",
+          "health": "DATA_BLOCKED",
+          "reason": "ZERO_VOLUME"
+        },
+        {
+          "at": "2026-10-17T13:27:43.365737+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:27:46.287855+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:27:46.313440+00:00",
+          "health": "DATA_BLOCKED",
+          "reason": "ZERO_VOLUME"
+        },
+        {
+          "at": "2026-10-17T13:27:56.317508+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:27:58.691251+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:27:58.717209+00:00",
+          "health": "DATA_BLOCKED",
+          "reason": "ZERO_VOLUME"
+        },
+        {
+          "at": "2026-10-17T13:28:08.722100+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:28:11.216008+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:28:11.240843+00:00",
+          "health": "DATA_BLOCKED",
+          "reason": "ZERO_VOLUME"
+        },
+        {
+          "at": "2026-10-17T13:28:21.244803+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:28:24.259535+00:00",
+          "health": "WAITING",
+          "reason": "NO_NEW_CANDLE"
+        },
+        {
+          "at": "2026-10-17T13:28:24.285050+00:00",
+          "health": "DATA_BLOCKED",
+          "reason": "ZERO_VOLUME"
+        },
+        {
+          "at": "2026-10-17T13:28:30.662347+00:00",
+          "health": "STOPPED",
+          "reason": "STOP_REQUESTED"
+        }
+      ],
+      "format": 1,
+      "health": "STOPPED",
+      "last_success": null,
+      "lease_until": null,
+      "owner": null,
+      "reason": "STOP_REQUESTED",
+      "stop_requested": true,
+      "updated_at": "2026-10-17T13:28:30.662347+00:00"
+    },
+    "revision": 1,
+    "equity": "2000",
+    "cash": "2000",
+    "realized_pnl": "0",
+    "open_position": null,
+    "last_completed_candle": null,
+    "last_successful_market_data_at": null,
+    "risk": {
+      "daily_halted": false,
+      "day": null,
+      "day_start_equity": "2000",
+      "drawdown_halted": false,
+      "emergency_halted": true,
+      "entries_today": 0,
+      "last_equity": "2000",
+      "max_observed_drawdown": "0",
+      "peak_equity": "2000"
+    },
+    "accounting_utc_day": null,
+    "daily_summary_current": false,
+    "daily_marked_pnl": null,
+    "daily_realized_pnl": null,
+    "equity_marked_at": null,
+    "closed_trades": 0,
+    "processed_candles": 0
+  },
+  "worker_request_manifest": [
+    {
+      "at": "2026-10-17T13:27:30.929937+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets",
+      "http": 200,
+      "file": "public-response-0001.json",
+      "sha256": "5588e39be07a54f9761ef894d47620e8a18670985cfea22d4b8ec65a94bec526"
+    },
+    {
+      "at": "2026-10-17T13:27:31.811339+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "http": 200,
+      "file": "public-response-0002.json",
+      "sha256": "1ff0a9e24abdbce4987c168d183ea121f36693315c11f59d43edb1648fbd9d0b"
+    },
+    {
+      "at": "2026-10-17T13:27:32.048887+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0003.json",
+      "sha256": "5864f4329b4127e562e9c0807f4d1e5f1b9a4d3a3195a6ea5a1c87ba53526836"
+    },
+    {
+      "at": "2026-10-17T13:27:32.946289+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0004.json",
+      "sha256": "97390197c563753b7af84287e5b18ca205f6b80ad2877d8e45adbfde84b9a2ac"
+    },
+    {
+      "at": "2026-10-17T13:27:33.295824+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0005.json",
+      "sha256": "f7372d78c01baae53713796c796c46f820fa3d6dc7799e1893ca38f47a058f75"
+    },
+    {
+      "at": "2026-10-17T13:27:43.547192+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets",
+      "http": 200,
+      "file": "public-response-0006.json",
+      "sha256": "ab7225b9d086c525976084fccea59b74b6bd9e8e57757681705d584a9b90720a"
+    },
+    {
+      "at": "2026-10-17T13:27:44.275501+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "http": 200,
+      "file": "public-response-0007.json",
+      "sha256": "958fd9839caef9779a2dfa3fb148b3cddc077ea6405b24cf3bc640ba10b8fe6e"
+    },
+    {
+      "at": "2026-10-17T13:27:44.624249+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0008.json",
+      "sha256": "5864f4329b4127e562e9c0807f4d1e5f1b9a4d3a3195a6ea5a1c87ba53526836"
+    },
+    {
+      "at": "2026-10-17T13:27:45.227938+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0009.json",
+      "sha256": "97390197c563753b7af84287e5b18ca205f6b80ad2877d8e45adbfde84b9a2ac"
+    },
+    {
+      "at": "2026-10-17T13:27:46.258340+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0010.json",
+      "sha256": "f7372d78c01baae53713796c796c46f820fa3d6dc7799e1893ca38f47a058f75"
+    },
+    {
+      "at": "2026-10-17T13:27:56.511402+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets",
+      "http": 200,
+      "file": "public-response-0011.json",
+      "sha256": "b11283faa5b027c86c9accd9ea05362605471217e36f627f18b649030b6b3733"
+    },
+    {
+      "at": "2026-10-17T13:27:57.173500+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "http": 200,
+      "file": "public-response-0012.json",
+      "sha256": "958fd9839caef9779a2dfa3fb148b3cddc077ea6405b24cf3bc640ba10b8fe6e"
+    },
+    {
+      "at": "2026-10-17T13:27:57.565705+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0013.json",
+      "sha256": "5864f4329b4127e562e9c0807f4d1e5f1b9a4d3a3195a6ea5a1c87ba53526836"
+    },
+    {
+      "at": "2026-10-17T13:27:58.046221+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0014.json",
+      "sha256": "97390197c563753b7af84287e5b18ca205f6b80ad2877d8e45adbfde84b9a2ac"
+    },
+    {
+      "at": "2026-10-17T13:27:58.662303+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0015.json",
+      "sha256": "f7372d78c01baae53713796c796c46f820fa3d6dc7799e1893ca38f47a058f75"
+    },
+    {
+      "at": "2026-10-17T13:28:08.924127+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets",
+      "http": 200,
+      "file": "public-response-0016.json",
+      "sha256": "ed56819229f7f1c1f8680e6c9b96e529461ef8c12959a6a3ba47ef060d4f6a19"
+    },
+    {
+      "at": "2026-10-17T13:28:09.563781+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "http": 200,
+      "file": "public-response-0017.json",
+      "sha256": "58df327a797aecad34a9719997a0b90ab8d5ffd7e0b465485b4b0c343c282f4e"
+    },
+    {
+      "at": "2026-10-17T13:28:10.373679+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0018.json",
+      "sha256": "5864f4329b4127e562e9c0807f4d1e5f1b9a4d3a3195a6ea5a1c87ba53526836"
+    },
+    {
+      "at": "2026-10-17T13:28:10.823609+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0019.json",
+      "sha256": "97390197c563753b7af84287e5b18ca205f6b80ad2877d8e45adbfde84b9a2ac"
+    },
+    {
+      "at": "2026-10-17T13:28:11.188494+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0020.json",
+      "sha256": "f7372d78c01baae53713796c796c46f820fa3d6dc7799e1893ca38f47a058f75"
+    },
+    {
+      "at": "2026-10-17T13:28:21.437471+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets",
+      "http": 200,
+      "file": "public-response-0021.json",
+      "sha256": "425374c0d46eb4569c4bc285d128facfb861b3cd32279fb4bb3a828baf5c9b0f"
+    },
+    {
+      "at": "2026-10-17T13:28:22.396055+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/exchange/v1/markets_details",
+      "http": 200,
+      "file": "public-response-0022.json",
+      "sha256": "026ae667fbfb2765d6cacfba3fc07ae9be97f138655219e59b41e71638ae2650"
+    },
+    {
+      "at": "2026-10-17T13:28:22.671768+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1792242899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0023.json",
+      "sha256": "5864f4329b4127e562e9c0807f4d1e5f1b9a4d3a3195a6ea5a1c87ba53526836"
+    },
+    {
+      "at": "2026-10-17T13:28:23.863539+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1791342899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0024.json",
+      "sha256": "97390197c563753b7af84287e5b18ca205f6b80ad2877d8e45adbfde84b9a2ac"
+    },
+    {
+      "at": "2026-10-17T13:28:24.230449+00:00",
+      "method": "GET",
+      "url": "https://api.coindcx.com/market_data/candles?endTime=1790442899999&interval=15m&limit=1000&pair=I-BTC_INR&startTime=1789649100000",
+      "http": 200,
+      "file": "public-response-0025.json",
+      "sha256": "f7372d78c01baae53713796c796c46f820fa3d6dc7799e1893ca38f47a058f75"
+    }
+  ],
+  "paper_actual_http_offline_replay": {
+    "label": "OFFLINE_REPLAY_OF_ACTUAL_PUBLIC_HTTP_BYTES_NOT_SYNTHETIC_CANDLES",
+    "capture_as_of": "2026-10-17T13:27:33.304078+00:00",
+    "private_requests": 0,
+    "network_requests": 0,
+    "replayed_responses": 5,
+    "health": "DATA_BLOCKED",
+    "quality": {
+      "symbol": "I-BTC_INR",
+      "timeframe": "15m",
+      "quote_currency": "INR",
+      "data_kind": "historical",
+      "as_of": "2026-10-17T13:27:33.304078+00:00",
+      "status": "ZERO_VOLUME",
+      "eligible": false,
+      "reasons": [
+        "ZERO_VOLUME",
+        "LIQUIDITY_REVIEW_REQUIRED"
+      ],
+      "warnings": [
+        "QUOTE_LIQUIDITY_NOT_VERIFIED"
+      ],
+      "input_rows": 2882,
+      "invalid_rows": 0,
+      "completed_rows": 2882,
+      "excluded_rows": [],
+      "duplicate_timestamps": 0,
+      "out_of_order": false,
+      "expected_bars": 2882,
+      "missing_bars": 0,
+      "completeness": "1",
+      "zero_volume_bars": 1,
+      "liquidity": "NOT_ASSESSED",
+      "policy": {
+        "min_history_bars": 2880,
+        "min_completeness": "1",
+        "max_staleness_minutes": 30,
+        "max_zero_volume_fraction": "0",
+        "min_quote_volume_per_bar": null,
+        "require_verified_liquidity": true
+      },
+      "live_trading_enabled": false
+    },
+    "equity": "2000",
+    "processed_candles": 0,
+    "financial_state_unchanged": true,
+    "orders_submitted": 0,
+    "zero_volume_preservation_status": "PASS"
+  },
+  "official_documentation": {
+    "url": "https://docs.coindcx.com/",
+    "http": 200,
+    "bytes": 1118960,
+    "sha256": "7b77ac0e97bd43ae3a25455f2e0a56d1faae6942984efc156a1f5712c6fb9f3e",
+    "clarification": {
+      "source": "https://docs.coindcx.com/#get-order-update",
+      "section_sha256": "d6ba47b78d71bc11f95bee2ffa71b3e566a7fc9c1dffcf33e0cece0ddfb539f2",
+      "scope": "Documented private spot stream shape, read from public documentation only; no stream connection made",
+      "fee_amount": "total fee amount charged so far (in base-currency)",
+      "remaining_quantity": "pending (unfilled/uncancelled) quantity",
+      "cancelled_quantity": "quantity cancelled on this order",
+      "rest_partial_cancellation_and_actual_fee_settlement": "UNVERIFIED"
+    }
+  },
+  "private_requests": 0,
+  "real_orders": 0,
+  "live_trading_enabled": false,
+  "phase9_started": false,
+  "linux_test_runs": {
+    "baseline": {
+      "passed": 583,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 1,
+      "total": 584,
+      "seconds": 16.641
+    },
+    "initial_safety": {
+      "passed": 333,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 333,
+      "seconds": 7.915
+    },
+    "initial_public": {
+      "passed": 584,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 584,
+      "seconds": 17.674
+    },
+    "new_guards": {
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 2,
+      "seconds": 0.031
+    },
+    "final_safety": {
+      "passed": 335,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 335,
+      "seconds": 8.102
+    },
+    "final_public": {
+      "passed": 586,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "total": 586,
+      "seconds": 18.023
+    }
+  },
+  "history_audit_runner_sha256": "eaf93d1af790d55b11f86096a4536512f62a9fa17117a1674f06168952093c8b",
+  "hypothetical_default_size_checks": [
+    {
+      "symbol": "I-BTC_INR",
+      "label": "HYPOTHETICAL_PURE_SIZE_CHECK_NOT_RISK_APPROVAL_OR_BACKTEST",
+      "data_eligible": false,
+      "margin_amount_inr": "100",
+      "leverage": "1",
+      "fee_and_slippage": "unverified default estimates 0.001 each",
+      "reference": "8215555.4",
+      "quantity_step": "0.00001",
+      "minimum_quantity": "0.00001",
+      "minimum_notional": "100",
+      "orders_submitted": 0,
+      "result": "REJECTED",
+      "reason": "position is below instrument minimum; never increase risk to fit"
+    },
+    {
+      "symbol": "I-ETH_INR",
+      "label": "HYPOTHETICAL_PURE_SIZE_CHECK_NOT_RISK_APPROVAL_OR_BACKTEST",
+      "data_eligible": false,
+      "margin_amount_inr": "100",
+      "leverage": "1",
+      "fee_and_slippage": "unverified default estimates 0.001 each",
+      "reference": "244280",
+      "quantity_step": "0.0001",
+      "minimum_quantity": "1E-7",
+      "minimum_notional": "100",
+      "orders_submitted": 0,
+      "result": "REJECTED",
+      "reason": "position is below instrument minimum; never increase risk to fit"
+    },
+    {
+      "symbol": "I-SOL_INR",
+      "label": "HYPOTHETICAL_PURE_SIZE_CHECK_NOT_RISK_APPROVAL_OR_BACKTEST",
+      "data_eligible": false,
+      "margin_amount_inr": "100",
+      "leverage": "1",
+      "fee_and_slippage": "unverified default estimates 0.001 each",
+      "reference": "10479.5",
+      "quantity_step": "0.001",
+      "minimum_quantity": "0.01",
+      "minimum_notional": "100",
+      "orders_submitted": 0,
+      "result": "REJECTED",
+      "reason": "position is below instrument minimum; never increase risk to fit"
+    },
+    {
+      "symbol": "I-DOGE_INR",
+      "label": "HYPOTHETICAL_PURE_SIZE_CHECK_NOT_RISK_APPROVAL_OR_BACKTEST",
+      "data_eligible": false,
+      "margin_amount_inr": "100",
+      "leverage": "1",
+      "fee_and_slippage": "unverified default estimates 0.001 each",
+      "reference": "8.0181",
+      "quantity_step": "1",
+      "minimum_quantity": "0.001",
+      "minimum_notional": "100",
+      "orders_submitted": 0,
+      "result": "REJECTED",
+      "reason": "position is below instrument minimum; never increase risk to fit"
+    }
+  ]
+}
