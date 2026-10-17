@@ -89,7 +89,16 @@ Exact command from the repository root, before and after changes:
 | Final Phase 1 | 81 | 81 | 0 | 0 | 0 |
 
 No expected-failure or zero-test runs were used. No failing checks remain.
-All tests ran on Python 3.12.14; Windows execution was not available here.
+The baseline and audit runs above used Python 3.12.14 on Linux; a Windows
+runtime was not available in the cloud host.
+
+Native Windows follow-up subsequently passed the same **81 tests, with 0
+failures, 0 errors, and 0 skips**, on the GitHub-hosted `windows-2022` runner with
+Python 3.12.10. Source commit `6f96dfc76a9e5d80c1f9b55601577a798df2df16`
+and its actual runner totals were verified from
+[run 39011498680](https://github.com/25ai1so139-gif/Coindcx-trading-bot/actions/runs/39011498680).
+See [VALIDATION.md](VALIDATION.md) for the evidence and distinction between
+native Windows CI execution and untested personal-PC installation steps.
 
 Additional isolated synthetic smoke checks generated 3,072 candles and exercised
 `backtest`, `paper`, `verify`, and `manual` with `--strategy`, `--margin-amount 100`,

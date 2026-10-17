@@ -180,15 +180,17 @@ Phase 1 added tests for absolute INR caps, daily entry counts, emergency cleanup
 network-free commands, and Git secret-file exclusions. Git must be installed
 for the repository-hygiene tests.
 The run record is in [VALIDATION.md](VALIDATION.md). No historical performance
-has been established. Windows instructions are provided; execution was validated
-on Linux with Python 3.12.
+has been established. The complete 81-test suite passed on Linux/Python 3.12.14
+and on native Windows Server 2022/Python 3.12.10 through GitHub Actions. The
+Windows CI run is linked below; manual installation through the Windows Python
+launcher has not been tested end-to-end on a personal computer.
 
 The Phase 1 audit and its limitations are recorded in [PHASE1_AUDIT.md](PHASE1_AUDIT.md).
 
 ## Native Windows CI verification
 
 [.github/workflows/windows-phase1.yml](.github/workflows/windows-phase1.yml)
-prepares a native Windows Server 2022 / Python 3.12 job on GitHub Actions. It
+runs a native Windows Server 2022 / Python 3.12 job on GitHub Actions. It
 asserts `sys.platform == 'win32'`, requires the complete Phase 1 suite (at least
 81 tests), installs requirements with package downloads disabled, and runs the
 same full unittest command. The workflow has read-only repository permissions,
@@ -200,3 +202,10 @@ Windows verification → Run workflow** once the workflow exists on the default
 branch. Inspect the job's actual unittest counts before recording Windows as
 passed. A workflow file alone is not evidence of successful Windows execution.
 WSL/Linux test results do not validate native Windows execution.
+
+Verified native Windows result: **81 passed, 0 failures, 0 errors, 0 skipped**
+for source commit `6f96dfc76a9e5d80c1f9b55601577a798df2df16` in
+[GitHub Actions run 39011498680](https://github.com/25ai1so139-gif/Coindcx-trading-bot/actions/runs/39011498680).
+The public job step named `Test result: Windows / Python 3.12.10 / Ran 81 tests
+in 0.574s / OK / exit 0` exposes the actual runner outcome without requiring
+access to detailed logs. Phase 2 has not started, and live trading remains disabled.
