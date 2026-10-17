@@ -49,7 +49,31 @@ jobs:
 
       - name: Run the full offline test suite
         run: |
-          python -m unittest discover -s tests -v
+          @'
+          import os
+          import platform
+          import subprocess
+          import sys
+          from pathlib import Path
+
+          command = [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]
+          result = subprocess.run(command, capture_output=True, text=True)
+          sys.stdout.write(result.stdout)
+          sys.stderr.write(result.stderr)
+          output = result.stdout + result.stderr
+          totals = "\n".join(output.rstrip().splitlines()[-7:])
+          summary = (
+              "# Native Windows Phase 1 verification\n\n"
+              f"Platform: {platform.platform()}\n\n"
+              f"Python: {platform.python_version()}\n\n"
+              f"Commit: {os.environ['GITHUB_SHA']}\n\n"
+              "Command: `python -m unittest discover -s tests -v`\n\n"
+              f"Exit status: {result.returncode}\n\n"
+              f"```text\n{totals}\n```\n"
+          )
+          Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text(summary, encoding="utf-8")
+          raise SystemExit(result.returncode)
+          '@ | python -
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Check working-tree whitespace
